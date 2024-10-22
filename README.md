@@ -1,1 +1,1 @@
-# CinematicQA
+# VidComposition
