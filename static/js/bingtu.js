@@ -9,123 +9,166 @@ var option;
 
 var data = [
   {
-    name: "Perception",
+    name: "Cinematography",
     itemStyle: {
       color: "#84c3b7",
     },
     children: [
       {
-        name: "Blackground\nPerception",
-        value: 529,
-        itemStyle: {
-          color: "#e9eee0",
-        },
-      },
-      {
-        name: "Shot Type\nPerception",
-        value: 519,
+        name: "Shot Size\nPerception",
+        value: 1, // 修改为相同的值
+        originalValue: 205, // 保留原始值
         itemStyle: {
           color: "#ebf1b7",
         },
       },
       {
-        name: "Camera Angle\nPerception",
-        value: 615,
+        name: "Camera\nAngle\nPerception",
+        value: 1,
+        originalValue: 202,
         itemStyle: {
           color: "#e2ebcf",
         },
       },
       {
-        name: "Text\nRendering",
-        value: 56,
+        name: "Camera\nMovement\nPerception",
+        value: 1,
+        originalValue: 219,
         itemStyle: {
-          color: "#d5ead5",
-        },
-      },
-      {
-        name: "Counting\nPerception",
-        value: 261,
-        itemStyle: {
-          color: "#d6e4bb",
-        },
-      },
-      {
-        name: "Special Effects\nPerception",
-        value: 74,
-        itemStyle: {
-          color: "#c8d6cf",
-        },
-      },
-      {
-        name: "Difference\nSpotting",
-        value: 241,
-        itemStyle: {
-          color: "#eef5d9",
-        },
-      },
-    ],
-  },
-  {
-    name: "Cogntion",
-    itemStyle: {
-      color: "#f2b56f",
-    },
-    children: [
-      {
-        name: "Script Matching",
-        value: 109,
-        itemStyle: {
-          color: "#ffcea2",
-        },
-      },
-      {
-        name: "Future Prediction",
-        value: 222,
-        itemStyle: {
-          color: "#faeed3",
-        },
-      },
-      {
-        name: "Past Prediction",
-        value: 226,
-        itemStyle: {
-          color: "#fedec0",
-        },
-      },
-      {
-        name: "Character\nCounting",
-        value: 226,
-        itemStyle: {
-          color: "#fedec0",
-        },
-      },
-      {
-        name: "Scene\nCounting",
-        value: 226,
-        itemStyle: {
-          color: "#fedec0",
+          color: "#e2ebcf",
         },
       }
     ],
   },
   {
-    name: "Probing",
+    name: "Narrative",
+    itemStyle: {
+      color: "#f2b56f",
+    },
+    children: [
+      {
+        name: "Script\nMatching",
+        value: 1,
+        originalValue: 235,
+        itemStyle: {
+          color: "#ffcea2",
+        },
+      },
+      {
+        name: "Plot\nOrdering",
+        value: 1,
+        originalValue: 240,
+        itemStyle: {
+          color: "#faeed3",
+        },
+      }
+    ],
+  },
+  {
+    name: "Scene",
+    itemStyle: {
+      color: "#f2b56f",
+    },
+    children: [
+      {
+        name: "Background\nPerception",
+        value: 1,
+        originalValue: 65,
+        itemStyle: {
+          color: "#e9eee0",
+        },
+      },
+      {
+        name: "Scene\nCounting",
+        value: 1,
+        originalValue: 209,
+        itemStyle: {
+          color: "#fedec0",
+        },
+      },
+      {
+        name: "Lighting\nPerception",
+        value: 1,
+        originalValue: 31,
+        itemStyle: {
+          color: "#e9eee0",
+        },
+      }
+    ],
+  },
+  {
+    name: "Character",
     itemStyle: {
       color: "#8fbcd4",
     },
     children: [
       {
-        name: "VL\nComposition\nProbing",
-        value: 459,
+        name: "Character\nCounting",
+        value: 1,
+        originalValue: 71,
+        itemStyle: {
+          color: "#fedec0",
+        },
+      },
+      {
+        name: "Action\nPerception",
+        value: 1,
+        originalValue: 30,
+        itemStyle: {
+          color: "#fedec0",
+        },
+      },
+      {
+        name: "Costume,\nMakeup,\nand Props",
+        value: 1,
+        originalValue: 30,
+        itemStyle: {
+          color: "#d6e4bb",
+        },
+      },
+      {
+        name: "Emotion\nPerception",
+        value: 1,
+        originalValue: 49,
+        itemStyle: {
+          color: "#d6e4bb",
+        },
+      }
+    ],
+  },
+  {
+    name: "Making",
+    itemStyle: {
+      color: "#8fbcd4",
+    },
+    children: [
+      {
+        name: "Cut\nCounting",
+        value: 1,
+        originalValue: 29,
+        itemStyle: {
+          color: "#fedec0",
+        },
+      },
+      {
+        name: "Special\nEffects\nPerception",
+        value: 1,
+        originalValue: 54,
+        itemStyle: {
+          color: "#c8d6cf",
+        },
+      },
+      {
+        name: "Art Style\nPerception",
+        value: 1,
+        originalValue: 38,
         itemStyle: {
           color: "#8fbcd4",
         },
-      },
+      }
     ],
   },
 ];
-
-var total = data.reduce((sum, current) => sum + current.children.reduce((cSum, cCurrent) => cSum + cCurrent.value, 0), 0);
 
 option = {
   series: {
@@ -136,20 +179,33 @@ option = {
     emphasis: {
       focus: "ancestor",
     },
-    startAngle: 180, // Adjust start angle to split horizontally
+    startAngle: 180, // 调整开始角度
     label: {
       textStyle: {
         fontSize: 15,
         fontFamily: "Times New Roman",
       },
       formatter: function (params) {
-        var percentage = params.value //((params.value / total) * 100).toFixed(2) + "%";
-        return `${params.name}\n{small|${percentage}}`;
+        // 如果是子节点，直接显示 originalValue
+        if (params.data.originalValue !== undefined) {
+          return `${params.name}\n{small|${"("+params.data.originalValue+")"}}`;
+        } else {
+          // 如果是父节点，计算所有子节点的 originalValue 之和
+          var totalValue = 0;
+          if (params.data.children) {
+            params.data.children.forEach(function (child) {
+              if (child.originalValue !== undefined) {
+                totalValue += child.originalValue;
+              }
+            });
+          }
+          return `${params.name}\n{small|${"("+totalValue+")"}}`;
+        }
       },
       rich: {
         small: {
           fontSize: 15,
-          fontFamily: "Blod",
+          fontFamily: "Bold",
           lineHeight: 15,
         },
       },
@@ -157,32 +213,35 @@ option = {
     levels: [
       {},
       {
-        r0: "16%",
-        r: "40%",
+        r0: "16%",  // 第一层半径
+        r: "40%",   // 第一层到第二层的半径
         itemStyle: {
           borderRadius: 6,
           borderWidth: 4,
         },
         label: {
-          rotate: "tangential",
+          rotate: "tangential",  // 标签沿着圆周旋转
+          align: "center",        // 标签居中
+          position: "inside",     // 标签显示在节点内部
         },
       },
       {
-        r0: "40%",
-        r: "75%",
+        r0: "40%",  // 第二层半径
+        r: "75%",   // 第二层到第三层的半径
         itemStyle: {
           borderRadius: 6,
           borderWidth: 4,
         },
         label: {
-          align: "right",
+          align: "center",        // 标签居中
+          position: "inside",     // 标签显示在节点内部
         },
       },
       {
-        r0: "75%",
-        r: "77%",
+        r0: "75%",  // 第三层半径
+        r: "95%",   // 到最外层的半径
         label: {
-          position: "outside",
+          position: "outside",    // 外层标签显示在节点外部
           padding: 3,
           silent: false,
         },
