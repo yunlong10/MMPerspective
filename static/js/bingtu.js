@@ -11,31 +11,31 @@ var data = [
   {
     name: "Cinematography",
     itemStyle: {
-      color: "#84c3b7",
+      color: "#357f7f", // 更深的绿色
     },
     children: [
       {
         name: "Shot Size\nPerception",
-        value: 1, // 修改为相同的值
-        originalValue: 205, // 保留原始值
+        value: 1.3, 
+        originalValue: 205, 
         itemStyle: {
-          color: "#ebf1b7",
+          color: "#7fb3b3", // 浅绿色
         },
       },
       {
         name: "Camera\nAngle\nPerception",
-        value: 1,
+        value: 1.3,
         originalValue: 202,
         itemStyle: {
-          color: "#e2ebcf",
+          color: "#9ac7c7", // 更浅的绿色
         },
       },
       {
         name: "Camera\nMovement\nPerception",
-        value: 1,
+        value: 1.3,
         originalValue: 219,
         itemStyle: {
-          color: "#e2ebcf",
+          color: "#9ac7c7", // 更浅的绿色
         },
       }
     ],
@@ -43,23 +43,23 @@ var data = [
   {
     name: "Narrative",
     itemStyle: {
-      color: "#f2b56f",
+      color: "#b36a2d", // 更深的橙色
     },
     children: [
       {
         name: "Script\nMatching",
-        value: 1,
+        value: 1.3,
         originalValue: 235,
         itemStyle: {
-          color: "#ffcea2",
+          color: "#e8a876", // 浅橙色
         },
       },
       {
         name: "Plot\nOrdering",
-        value: 1,
+        value: 1.3,
         originalValue: 240,
         itemStyle: {
-          color: "#faeed3",
+          color: "#f0c0a0", // 更浅的橙色
         },
       }
     ],
@@ -67,7 +67,7 @@ var data = [
   {
     name: "Scene",
     itemStyle: {
-      color: "#f2b56f",
+      color: "#7d3b8e", // 更深的紫色
     },
     children: [
       {
@@ -75,15 +75,15 @@ var data = [
         value: 1,
         originalValue: 65,
         itemStyle: {
-          color: "#e9eee0",
+          color: "#c79ac7", // 更浅的紫色
         },
       },
       {
         name: "Scene\nCounting",
-        value: 1,
+        value: 1.3,
         originalValue: 209,
         itemStyle: {
-          color: "#fedec0",
+          color: "#d3b0d3", // 更浅的紫色
         },
       },
       {
@@ -91,7 +91,7 @@ var data = [
         value: 1,
         originalValue: 31,
         itemStyle: {
-          color: "#e9eee0",
+          color: "#d3b0d3", // 更浅的紫色
         },
       }
     ],
@@ -99,7 +99,7 @@ var data = [
   {
     name: "Character",
     itemStyle: {
-      color: "#8fbcd4",
+      color: "#3a6cae", // 更深的蓝色
     },
     children: [
       {
@@ -107,7 +107,7 @@ var data = [
         value: 1,
         originalValue: 71,
         itemStyle: {
-          color: "#fedec0",
+          color: "#83b3d9", // 浅蓝色
         },
       },
       {
@@ -115,7 +115,7 @@ var data = [
         value: 1,
         originalValue: 30,
         itemStyle: {
-          color: "#fedec0",
+          color: "#a3cde7", // 更浅的蓝色
         },
       },
       {
@@ -123,7 +123,7 @@ var data = [
         value: 1,
         originalValue: 30,
         itemStyle: {
-          color: "#d6e4bb",
+          color: "#83b3d9", // 浅蓝色
         },
       },
       {
@@ -131,7 +131,7 @@ var data = [
         value: 1,
         originalValue: 49,
         itemStyle: {
-          color: "#d6e4bb",
+          color: "#a3cde7", // 更浅的蓝色
         },
       }
     ],
@@ -139,7 +139,7 @@ var data = [
   {
     name: "Making",
     itemStyle: {
-      color: "#8fbcd4",
+      color: "#d45a5a", // 红色保持不变
     },
     children: [
       {
@@ -147,7 +147,7 @@ var data = [
         value: 1,
         originalValue: 29,
         itemStyle: {
-          color: "#fedec0",
+          color: "#f1a6a6", // 浅红色
         },
       },
       {
@@ -155,7 +155,7 @@ var data = [
         value: 1,
         originalValue: 54,
         itemStyle: {
-          color: "#c8d6cf",
+          color: "#f4b5b5", // 更浅的红色
         },
       },
       {
@@ -163,7 +163,7 @@ var data = [
         value: 1,
         originalValue: 38,
         itemStyle: {
-          color: "#8fbcd4",
+          color: "#f4b5b5", // 更浅的红色
         },
       }
     ],
@@ -179,18 +179,16 @@ option = {
     emphasis: {
       focus: "ancestor",
     },
-    startAngle: 180, // 调整开始角度
+    startAngle: 180, 
     label: {
       textStyle: {
-        fontSize: 15,
+        fontSize: 14,
         fontFamily: "Times New Roman",
       },
       formatter: function (params) {
-        // 如果是子节点，直接显示 originalValue
         if (params.data.originalValue !== undefined) {
           return `${params.name}\n{small|${"("+params.data.originalValue+")"}}`;
         } else {
-          // 如果是父节点，计算所有子节点的 originalValue 之和
           var totalValue = 0;
           if (params.data.children) {
             params.data.children.forEach(function (child) {
@@ -204,7 +202,7 @@ option = {
       },
       rich: {
         small: {
-          fontSize: 15,
+          fontSize: 12,
           fontFamily: "Bold",
           lineHeight: 15,
         },
@@ -213,35 +211,35 @@ option = {
     levels: [
       {},
       {
-        r0: "16%",  // 第一层半径
-        r: "40%",   // 第一层到第二层的半径
+        r0: "16%",  
+        r: "40%",   
         itemStyle: {
           borderRadius: 6,
           borderWidth: 4,
         },
         label: {
-          rotate: "tangential",  // 标签沿着圆周旋转
-          align: "center",        // 标签居中
-          position: "inside",     // 标签显示在节点内部
+          rotate: "tangential",
+          align: "center",        
+          position: "inside",     
         },
       },
       {
-        r0: "40%",  // 第二层半径
-        r: "75%",   // 第二层到第三层的半径
+        r0: "40%",  
+        r: "75%",   
         itemStyle: {
           borderRadius: 6,
           borderWidth: 4,
         },
         label: {
-          align: "center",        // 标签居中
-          position: "inside",     // 标签显示在节点内部
+          align: "center",        
+          position: "inside",     
         },
       },
       {
-        r0: "75%",  // 第三层半径
-        r: "95%",   // 到最外层的半径
+        r0: "75%",  
+        r: "95%",   
         label: {
-          position: "outside",    // 外层标签显示在节点外部
+          position: "outside",    
           padding: 3,
           silent: false,
         },
@@ -259,3 +257,5 @@ if (option && typeof option === "object") {
 }
 
 window.addEventListener("resize", myChart.resize);
+
+
