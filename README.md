@@ -7,25 +7,25 @@
 
 ### Key Areas and Sub-Tasks:
 - **Cinematography Analysis**:
-  - `Camera Movements`
-  - `Shot Sizes`
-  - `Angles`
+  - `Camera Movement Perception`
+  - `Shot Size Perception`
+  - `Camera Angle Perception`
 - **Character Understanding**:
-  - `Character Emotions`
-  - `Character Dynamics`
-  - `Character Interactions`
+  - `Emotion Perception`
+  - `Action Perception`
+  - `CMP (Costume, Makeup, and Props) Perception`
+  - `Character Counting`
 - **Narrative Understanding**:
-  - `Storyline Comprehension`
-  - `Plot Twists`
-  - `Scene Transitions`
+  - `Script Matching`
+  - `Plot Ordering`
 - **Scene Perception**:
-  - `Background Settings`
-  - `Lighting`
-  - `Scene Transitions`
+  - `Background Perception`
+  - `Scene Counting`
+  - `Lighting Perception`
 - **Making Analysis**:
-  - `Editing Techniques`
-  - `Special Effects`
-  - `Production Design`
+  - `Art Style Perception`
+  - `Cut Counting`
+  - `Special Effect Perception`
 
 VidComposition enables researchers and practitioners to uncover the strengths, limitations, and potential areas for improvement in MLLMs, offering valuable insights into the challenges of understanding edited and compiled video content.
 
