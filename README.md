@@ -3,39 +3,31 @@
 [**🌐 Homepage**](https://yunlong10.github.io/VidComposition/) | [**🔬 Paper**](https://yunlong10.github.io/VidComposition/) | [**👩‍💻 Code**](https://github.com/yunlong10/VidComposition/blob/main/) | [**📊 Dataset**](https://yunlong10.github.io/VidComposition/) | [**📈 Evaluation**](https://yunlong10.github.io/VidComposition/) | [**🏆 Leaderboard**](https://yunlong10.github.io/VidComposition/#leaderboard)
 
 ## What is VidComposition?
-> VidComposition is a novel benchmark crafted to evaluate the fine-grained video composition understanding of Multimodal Large Language Models (MLLMs). It focuses on assessing the ability of these models to interpret and analyze complex video compositions, where visual elements interact dynamically across time and space. VidComposition aims to bridge the gap in evaluating MLLMs by providing a detailed framework for understanding video content at a cinematic level. It comprises 15 intricate video comprehension tasks across five key areas of video composition:
+> VidComposition is a novel benchmark crafted to evaluate the fine-grained video composition understanding of Multimodal Large Language Models (MLLMs). It focuses on assessing the ability of these models to interpret and analyze complex video compositions, where visual elements interact dynamically across time and space. VidComposition aims to bridge the gap in evaluating MLLMs by providing a detailed framework for understanding video content at a cinematic level. It comprises 15 intricate video comprehension tasks across five key areas of video composition.
 
-### Key Areas and Sub-Tasks:
-- **Cinematography Analysis**:
-  - `Camera Movement Perception`
-  - `Shot Size Perception`
-  - `Camera Angle Perception`
-- **Character Understanding**:
-  - `Emotion Perception`
-  - `Action Perception`
-  - `CMP (Costume, Makeup, and Props) Perception`
-  - `Character Counting`
-- **Narrative Understanding**:
-  - `Script Matching`
-  - `Plot Ordering`
-- **Scene Perception**:
-  - `Background Perception`
-  - `Scene Counting`
-  - `Lighting Perception`
-- **Making Analysis**:
-  - `Art Style Perception`
-  - `Cut Counting`
-  - `Special Effect Perception`
+![alt text](assets/examples.png)
+
 
 VidComposition enables researchers and practitioners to uncover the strengths, limitations, and potential areas for improvement in MLLMs, offering valuable insights into the challenges of understanding edited and compiled video content.
 
-## Getting Started
+
 
 ## 🏆 Leaderboard
+
+![alt text](assets/tops.png)
+
 [Link](https://yunlong10.github.io/VidComposition/#leaderboard)
 
 ## 📉 Statistics
+
+![alt text](assets/sunburst-difficulty.png)
+
 [Link](https://yunlong10.github.io/VidComposition/#benchmark)
+
+## 👀 Visualization Results
+
+![alt text](assets/vis.png)
+
 
 ## ✏️ Citation
 ```bibtex
