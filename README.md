@@ -31,11 +31,10 @@ VidComposition enables researchers and practitioners to uncover the strengths, l
 
 ## ✏️ Citation
 ```bibtex
-@article{tang2024vidcomposition,
-      title={VidComposition: Can MLLMs Analyze Compositions in Compiled Videos?},
-      author={Tang, Yunlong and Guo, Junjia and Hua, Hang and Liang, Susan and Feng, Mingqian and Li, Xinyang and Mao, Rui and Huang, Chao and Bi, Jing and Zhang, Zeliang and Fazli, Pooyan and Xu, Chenliang},
-      journal={yunlong10.github.io},
-      url={https://yunlong10.github.io/VidComposition/},
-      year={2024}
+@article{tang2024vidcompostion,
+  title = {VidComposition: Can MLLMs Analyze Compositions in Compiled Videos?},
+  author = {Tang, Yunlong and Guo, Junjia and Hua, Hang and Liang, Susan and Feng, Mingqian and Li, Xinyang and Mao, Rui and Huang, Chao and Bi, Jing and Zhang, Zeliang and Fazli, Pooyan and Xu, Chenliang},
+  journal = {arXiv preprint arXiv:2411.10979},
+  year = {2024},
 }
 ```
