@@ -1,5 +1,5 @@
 
-# ✨ VidComposition: Can MLLMs Analyze Compositions in Compiled Videos?
+# ✨ VidComposition: Can MLLMs Analyze Compositions in Compiled Videos? (CVPR 2025)
 [**🌐 Homepage**](https://yunlong10.github.io/VidComposition/) | [**🔬 Paper**](https://arxiv.org/abs/2411.10979) | [**👩‍💻 Code**](https://github.com/yunlong10/VidComposition/blob/main/) | [**📊 Dataset**](https://yunlong10.github.io/VidComposition/) | [**📈 Evaluation**](https://huggingface.co/spaces/JunJiaGuo/VidComposition) | [**🏆 Leaderboard**](https://yunlong10.github.io/VidComposition/#leaderboard)
 
 ## What is VidComposition?
