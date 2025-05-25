@@ -20,13 +20,17 @@ MMPerspective enables researchers and practitioners to uncover the strengths, li
 
 ## 📉 Statistics
 
-![alt text](assets/sunburst-difficulty.png)
+![alt text](assets/radar.png)
 
 [Link](https://yunlong10.github.io/VidComposition/#benchmark)
 
+## Data Curation Pipeline
+
+![alt text](assets/data_pipeline.png)
+
 ## 👀 Visualization Results
 
-![alt text](assets/vis.png)
+![alt text](assets/diff.png)
 
 
 ## ✏️ Citation
