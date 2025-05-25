@@ -1,261 +1,167 @@
 var dom = document.getElementById("container");
 var myChart = echarts.init(dom, null, {
-  renderer: "canvas",
-  useDirtyRect: false,
+  renderer: "svg", // <-- 改成 SVG 渲染器
+  useDirtyRect: false, // 这个参数在 SVG 模式下通常无效，但保留也无妨
 });
-var app = {};
+var app = {}; // Placeholder if needed
 
 var option;
 
+// --- Chart Data (Robustness label in Outer Ring, Horizontal Rotation) ---
 var data = [
-  {
-    name: "Cinematography",
-    itemStyle: {
-      color: "#357f7f", // 更深的绿色
-    },
+  { // Perspective Reasoning
+    name: "Perspective\nReasoning",
+    itemStyle: { color: "#7EB6E6" },
     children: [
-      {
-        name: "Shot Size\nPerception",
-        value: 1.3, 
-        originalValue: 205, 
-        itemStyle: {
-          color: "#7fb3b3", // 浅绿色
-        },
-      },
-      {
-        name: "Camera\nAngle\nPerception",
-        value: 1.3,
-        originalValue: 202,
-        itemStyle: {
-          color: "#9ac7c7", // 更浅的绿色
-        },
-      },
-      {
-        name: "Camera\nMovement\nPerception",
-        value: 1.3,
-        originalValue: 219,
-        itemStyle: {
-          color: "#9ac7c7", // 更浅的绿色
-        },
-      }
-    ],
+      { name: "Perspective\nType\nReasoning", value: 440, originalValue: 606, itemStyle: { color: "#BED9F3" } },
+      { name: "Line\nRelationship\nReasoning", value: 151, originalValue: 151, itemStyle: { color: "#BFDFF7" } },
+      { name: "Perspective\nTransformation\nSpotting", value: 213, originalValue: 213, itemStyle: { color: "#CCE6F6" } },
+      { name: "Vanishing Point\nCounting", value: 114, originalValue: 114, itemStyle: { color: "#D5EEF5" } },
+      { name: "Out-of-View\nReasoning", value: 230, originalValue: 308, itemStyle: { color: "#DCEBFA" } }
+    ]
   },
-  {
-    name: "Narrative",
-    itemStyle: {
-      color: "#b36a2d", // 更深的橙色
-    },
+  { // Perspective Perception
+    name: "Perspective\nPerception",
+    itemStyle: { color: "#F4A2A4" },
     children: [
-      {
-        name: "Script\nMatching",
-        value: 1.3,
-        originalValue: 235,
-        itemStyle: {
-          color: "#e8a876", // 浅橙色
-        },
-      },
-      {
-        name: "Plot\nOrdering",
-        value: 1.3,
-        originalValue: 240,
-        itemStyle: {
-          color: "#f0c0a0", // 更浅的橙色
-        },
-      }
-    ],
+      { name: "Vanishing Point\nPerception", value: 156, originalValue: 156, itemStyle: { color: "#FCE7E7" } },
+      { name: "Lens Distortion\nPerception", value: 200, originalValue: 285, itemStyle: { color: "#FAD5D6" } },
+      { name: "Critical Line\nPerception", value: 123, originalValue: 123, itemStyle: { color: "#F8C4C5" } },
+      { name: "View Angle\nPerception", value: 162, originalValue: 162, itemStyle: { color: "#F6B3B5" } }
+    ]
   },
-  {
-    name: "Scene",
-    itemStyle: {
-      color: "#7d3b8e", // 更深的紫色
-    },
+  { // Perspective Robustness
+    name: "Perspective\nRobustness", // Parent data item
+    itemStyle: { color: "#C2D9A0" }, // Parent color
+    label: { show: false }, // Hide label on parent segment
     children: [
-      {
-        name: "Background\nPerception",
-        value: 1,
-        originalValue: 65,
-        itemStyle: {
-          color: "#c79ac7", // 更浅的紫色
-        },
-      },
-      {
-        name: "Scene\nCounting",
-        value: 1.3,
-        originalValue: 209,
-        itemStyle: {
-          color: "#d3b0d3", // 更浅的紫色
-        },
-      },
-      {
-        name: "Lighting\nPerception",
-        value: 1,
-        originalValue: 31,
-        itemStyle: {
-          color: "#d3b0d3", // 更浅的紫色
-        },
+      { // Child data item (where label is shown)
+        name: "Perspective\nRobustness", // Label text
+        value: 440, // Required by ECharts
+        originalValue: 593, // Value for the label
+        itemStyle: { color: "#C2D9A0", borderWidth: 0 }, // Match color, try remove border
+        label: {
+          show: true // Ensure label is shown on this child segment
+          // No 'rotate' property, defaults to level 2 setting (horizontal/radial)
+        }
       }
-    ],
-  },
-  {
-    name: "Character",
-    itemStyle: {
-      color: "#3a6cae", // 更深的蓝色
-    },
-    children: [
-      {
-        name: "Character\nCounting",
-        value: 1,
-        originalValue: 71,
-        itemStyle: {
-          color: "#83b3d9", // 浅蓝色
-        },
-      },
-      {
-        name: "Action\nPerception",
-        value: 1,
-        originalValue: 30,
-        itemStyle: {
-          color: "#a3cde7", // 更浅的蓝色
-        },
-      },
-      {
-        name: "Costume,\nMakeup,\nand Props",
-        value: 1,
-        originalValue: 30,
-        itemStyle: {
-          color: "#83b3d9", // 浅蓝色
-        },
-      },
-      {
-        name: "Emotion\nPerception",
-        value: 1,
-        originalValue: 49,
-        itemStyle: {
-          color: "#a3cde7", // 更浅的蓝色
-        },
-      }
-    ],
-  },
-  {
-    name: "Making",
-    itemStyle: {
-      color: "#d45a5a", // 红色保持不变
-    },
-    children: [
-      {
-        name: "Cut\nCounting",
-        value: 1,
-        originalValue: 29,
-        itemStyle: {
-          color: "#f1a6a6", // 浅红色
-        },
-      },
-      {
-        name: "Special\nEffects\nPerception",
-        value: 1,
-        originalValue: 54,
-        itemStyle: {
-          color: "#f4b5b5", // 更浅的红色
-        },
-      },
-      {
-        name: "Art Style\nPerception",
-        value: 1,
-        originalValue: 38,
-        itemStyle: {
-          color: "#f4b5b5", // 更浅的红色
-        },
-      }
-    ],
-  },
+    ]
+  }
 ];
 
+// --- Chart Configuration Options (Final Version with thicker rings) ---
 option = {
   series: {
     type: "sunburst",
     data: data,
-    radius: [0, "95%"],
-    sort: null,
-    emphasis: {
-      focus: "ancestor",
-    },
-    startAngle: 180, 
+    radius: [0, "85%"], // Adjusted overall radius
+    sort: null, // Keep data order
+    emphasis: { focus: "ancestor" }, // Highlight ancestors on hover
+    startAngle: 180, // Start position
     label: {
+      // Default text style for labels (if not overridden by rich text)
       textStyle: {
         fontSize: 14,
         fontFamily: "Times New Roman",
+        color: '#000', // Default color
+        fontWeight: 'normal' // Default weight
       },
+      // --- Corrected Label Formatter (Handles parent totals and rich text styling) ---
       formatter: function (params) {
-        if (params.data.originalValue !== undefined) {
-          return `${params.name}\n{small|${"("+params.data.originalValue+")"}}`;
-        } else {
-          var totalValue = 0;
-          if (params.data.children) {
-            params.data.children.forEach(function (child) {
-              if (child.originalValue !== undefined) {
-                totalValue += child.originalValue;
-              }
-            });
-          }
-          return `${params.name}\n{small|${"("+totalValue+")"}}`;
+        // Don't format if label is explicitly hidden
+        if (params.data.label && params.data.label.show === false) { return ''; }
+
+        var name = params.name || '';
+        var originalValue = params.data.originalValue;
+        var isLeaf = !params.data.children || params.data.children.length === 0;
+        var valueStr = ''; // Initialize the value part of the label
+
+        // --- Calculate Value String ---
+        if (isLeaf && originalValue !== undefined) {
+            // For LEAF nodes, use their own originalValue
+            valueStr = `\n{small|${"(" + originalValue + ")"}}`;
+        } else if (!isLeaf) {
+            // For PARENT nodes, calculate sum from children
+            var totalValue = 0;
+            if (params.data.children) {
+                params.data.children.forEach(function (child) {
+                    if (child.originalValue !== undefined) { totalValue += child.originalValue; }
+                });
+            }
+            // Create value string ONLY for the specific parent nodes that need it displayed
+            if (name === "Perspective\nReasoning" || name === "Perspective\nPerception") {
+               valueStr = `\n{small|${"(" + totalValue + ")"}}`;
+            }
         }
+
+        // --- Apply Rich Styles and Combine Name + Value ---
+        if (name === "Perspective\nReasoning") {
+          // Apply boldBlue style to name, append its calculated value string
+          return `{boldBlue|${name}}${valueStr}`;
+        } else if (name === "Perspective\nPerception") {
+          // Apply boldRed style to name, append its calculated value string
+          return `{boldRed|${name}}${valueStr}`;
+        } else if (name === "Perspective\nRobustness" && isLeaf) { // Apply style to the leaf node label
+           // Apply boldGreen style to name, append its leaf value string
+           return `{boldGreen|${name}}${valueStr}`;
+        }
+
+        // --- Handle Other Labels (mostly the other leaf nodes) ---
+        if (isLeaf) {
+             // Return name + its leaf value string
+             return `${name}${valueStr}`;
+        }
+
+        // Fallback for any other cases
+        return name;
       },
+      // --- Rich Text Style Definitions ---
       rich: {
-        small: {
+        small: { // Style for the "(value)" part
           fontSize: 12,
-          fontFamily: "Bold",
+          fontFamily: "Times New Roman",
+          fontWeight: "bold",
           lineHeight: 15,
         },
+        boldBlue: { // Style for Reasoning name
+          color: '#003366', // Deep Blue
+          fontWeight: 'bold',
+          fontSize: 14,
+          fontFamily: "Times New Roman"
+        },
+        boldRed: { // Style for Perception name
+          color: '#B22222', // Deep Red (Firebrick)
+          fontWeight: 'bold',
+          fontSize: 14,
+          fontFamily: "Times New Roman"
+        },
+        boldGreen: { // Style for Robustness name
+          color: '#006400', // Deep Green
+          fontWeight: 'bold',
+          fontSize: 14,
+          fontFamily: "Times New Roman"
+        }
       },
     },
+    // --- Level Configuration (Thicker Rings) ---
     levels: [
-      {},
-      {
-        r0: "16%",  
-        r: "40%",   
-        itemStyle: {
-          borderRadius: 6,
-          borderWidth: 4,
-        },
-        label: {
-          rotate: "tangential",
-          align: "center",        
-          position: "inside",     
-        },
+      {}, // Level 0 (center)
+      { // Level 1 (Parents: Reasoning, Perception) -> Tangential Rotation
+        r0: "10%", r: "40%",
+        itemStyle: { borderRadius: 6, borderWidth: 4 },
+        label: { rotate: "tangential", align: "center", position: "inside" }
       },
-      {
-        r0: "40%",  
-        r: "75%",   
-        itemStyle: {
-          borderRadius: 6,
-          borderWidth: 4,
-        },
-        label: {
-          align: "center",        
-          position: "inside",     
-        },
-      },
-      {
-        r0: "75%",  
-        r: "95%",   
-        label: {
-          position: "outside",    
-          padding: 3,
-          silent: false,
-        },
-        itemStyle: {
-          borderColor: "transparent",
-          borderWidth: 0,
-        },
-      },
+      { // Level 2 (Children, incl. Robustness label) -> Default Rotation (Horizontal/Radial)
+        r0: "40%", r: "85%",
+        itemStyle: { borderRadius: 6, borderWidth: 4 },
+        label: { align: "center", position: "inside" }
+      }
     ],
   },
 };
 
+// --- Apply Options and Set up Resize Listener ---
 if (option && typeof option === "object") {
   myChart.setOption(option);
 }
-
 window.addEventListener("resize", myChart.resize);
-
-

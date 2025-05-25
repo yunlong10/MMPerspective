@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> MMPerspective </title>
 
-  <link rel="icon" href="./static/images/mmperspective.png">
+  <link rel="icon" href="./static/images/logo.png">
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -131,27 +131,29 @@
             <span class="rainbow_text_animated" style="vertical-align: middle">MMPerspective</span>
             </h1>
           <h2 class="subtitle is-3 publication-subtitle" style="margin-bottom: 0px;">
-              Can MLLMs Analyze Compositions in Compiled Videos?
+            Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness
           </h2>
           <div class="is-size-5 publication-authors" style="width: 80%; margin: 20px auto;" >
             <span class="author-block"><a href="https://yunlong10.github.io">Yunlong Tang</a>*<sup style="color:#6fbf73;">1</sup>,</span>
-            <span class="author-block"><a href="">Pinxin Liu</a>*<sup style="color:#6fbf73;">1</sup>,</span>
-            <span class="author-block"><a href="https://hanghuacs.owlstown.net/">Mingqian Feng</a>*<sup style="color:#6fbf73;">1</sup>,</span>
-            <span class="author-block"><a href="https://liangsusan-git.github.io/">Zhangyun Tan</a><sup style="color:#6fbf73;">1</sup>,</span>
-            <span class="author-block"><a href="https://fmmarkmq.github.io/">Rui Mao</a><sup style="color:#6fbf73;">1</sup>,</span>
-            <span class="author-block"><a href="">Xinyang Li</a><sup style="color:#6fbf73;">1</sup>,</span>
+            <span class="author-block"><a href="https://andypinxinliu.github.io/">Pinxin Liu</a>*<sup style="color:#6fbf73;">1</sup>,</span>
+            <span class="author-block"><a href="https://fmmarkmq.github.io/">Mingqian Feng</a>*<sup style="color:#6fbf73;">1</sup>,</span>
+            <span class="author-block"><a href="https://zhangyun04.github.io/">Zhangyun Tan</a><sup style="color:#6fbf73;">1</sup>,</span>
             <span class="author-block"><a href="">Rui Mao</a><sup style="color:#6fbf73;">1</sup>,</span>
             <span class="author-block"><a href="https://wikichao.github.io/">Chao Huang</a><sup style="color:#6fbf73;">1</sup>,</span>
             <span class="author-block"><a href="https://jing-bi.github.io/">Jing Bi</a><sup style="color:#6fbf73;">1</sup>,</span>
+            <span class="author-block"><a href="https://shawn-yzxiao.github.io/">Yunzhong Xiao</a><sup style="color:#ed4b82;">2</sup>,</span>
+            <span class="author-block"><a href="https://liangsusan-git.github.io/">Susan Liang</a><sup style="color:#6fbf73;">1</sup>,</span>
+            <span class="author-block"><a href="https://hanghuacs.owlstown.net/">Hang Hua</a><sup style="color:#6fbf73;">1</sup>,</span>
+            <span class="author-block"><a href="https://alivosoughi.com/">Ali Vosoughi</a><sup style="color:#6fbf73;">1</sup>,</span>
+            <span class="author-block"><a href="https://songluchuan.github.io/">Luchuan Song</a><sup style="color:#6fbf73;">1</sup>,</span>
             <span class="author-block"><a href="https://zhangaipi.github.io/">Zeliang Zhang</a><sup style="color:#6fbf73;">1</sup>,</span>
-            <span class="author-block"><a href="https://pooyanfazli.com/index.html">Pooyan Fazli</a><sup style="color:#ed4b82;">2</sup>,</span>
             <span class="author-block"><a href="https://www.cs.rochester.edu/~cxu22/index.html">Chenliang Xu</a>&dagger;<sup style="color:#6fbf73;">1</sup></span><br>
             <!-- <span class="author-block" style="font-size:24px"><a href="https://github.com/BradyFU/Video-MME">MMComposition Team</a></span> -->
         </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup style="color:#6fbf73">1</sup>University of Rochester,</span>
             <!-- <span class="author-block"><sup style="color:#6fbf73;">1</sup></span> -->
-            <span class="author-block"><sup style="color:#ed4b82">2</sup>Arizona State University</span>
+            <span class="author-block"><sup style="color:#ed4b82">2</sup>Carnegie Mellon University</span>
             <!-- <span class="paper-block"><b style="color:#f41c1c">ICLR 2024 Oral</b> (85 in 7304, 1.2%)</span> -->
           </div>
           <div class="column has-text-centered">
@@ -170,7 +172,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/yunlong10/VidComposition"
+                <a href="https://github.com/yunlong10/MMPerspective"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -180,7 +182,7 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/yunlong10/VidComposition"
+                <a href="https://github.com/yunlong10/MMPerspective"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <!-- <i class="far fa-images"></i> -->
@@ -229,20 +231,20 @@
         
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
-          The advancement of Multimodal Large Language Models (MLLMs) has enabled significant progress in multimodal understanding, expanding their capacity to analyze video content.
-          However, existing evaluation benchmarks for MLLMs primarily focus on abstract video comprehension, lacking a detailed assessment of their ability to understand video compositions, the nuanced interpretation of how visual elements combine and interact within highly compiled video contexts.
-          We introduce VidComposition, a new benchmark specifically designed to evaluate the video composition understanding capabilities of MLLMs using carefully curated compiled videos and cinematic-level annotations.
-          VidComposition includes 982 videos with 1706 multiple-choice questions, covering various compositional aspects such as camera movement, angle, shot size, narrative structure, character actions and emotions, etc.
-          Our comprehensive evaluation of 33 open-source and proprietary MLLMs reveals a significant performance gap between human and model capabilities. This highlights the limitations of current MLLMs in understanding complex, compiled video compositions and offers insights into areas for further improvement.
+          <!-- Understanding perspective is fundamental to human visual perception, yet the extent to which multimodal large language models (MLLMs) internalize perspective geometry remains unclear. We introduce MMPerspective, the first benchmark specifically designed to systematically evaluate MLLMs' understanding of perspective through 10 carefully crafted tasks across three complementary dimensions: Perspective Perception, Reasoning, and Robustness. Our benchmark comprises 2,711 real-world and synthetic image instances with 5,083 question-answer pairs that probe key capabilities like vanishing point perception, perspective type reasoning, and line relationship understanding. Through evaluating 43 state-of-the-art MLLMs, we uncover significant limitations: while models show competence on basic perceptual tasks, they struggle with compositional reasoning and maintaining spatial consistency. Our analysis reveals patterns between model architecture, scale, and perspective capabilities, highlighting robustness bottlenecks and benefits of chain-of-thought prompting. -->
+
+          Perspective has long served as a cornerstone for representing three-dimensional reality on two-dimensional surfaces, enabling humans to infer spatial structure and depth from flat images. This capability is central to artistic creation, scientific visualization, and machine perception. While some research has attempted to enable models to detect vanishing points and key lines, these approaches often rely on precise mathematical models or specialized datasets, struggling to capture perspective-related semantics or generalize to broader tasks.
+
+          Recent multimodal large language models like GPT-4 and Gemini have shown powerful visual perception capabilities, but their perspective understanding remains untested. While these models excel at high-level vision-language tasks, existing benchmarks rarely evaluate geometric reasoning abilities. It remains unclear whether MLLMs can identify vanishing points, understand line convergence, reason about spatial relationships, or maintain consistent interpretations across viewpoints.
 
           Our key contributions are:
 
-            <ol> <li>We introduce <strong>VidComposition</strong>, a novel, human-annotated, high-quality benchmark for evaluating fine-grained video composition understanding in MLLMs.</li>
-            <li>We comprehensively evaluate 33 MLLMs for video understanding with <strong>VidComposition</strong>. The results show the challenging nature of <strong>VidComposition</strong> and the <strong>substantial gap</strong> between MLLMs' and humans' capabilities in video composition understanding.</li>
-            <li>We analyze the critical factors that influence the performance of MLLMs systematically, providing potential directions for model improvement and future advancements.</li> </ol>
+            <ol> <li>We introduce <strong>MMPerspective</strong>, the first dedicated benchmark for evaluating perspective understanding in MLLMs, spanning 10 tasks across three dimensions, consisting of 2,711 instances and 5,083 QA pairs.</li>
+            <li>We conduct a comprehensive evaluation of 43 representative MLLMs and reveal key limitations in perspective perception, reasoning, and robustness.</li>
+            <li>We offer new insights into current model bottlenecks and provide guidance toward building geometry-aware, spatially grounded multimodal systems.</li> </ol>
 
 </div>
-<img src="static/images/example.png" />
+<img src="static/images/mmperspective.png" />
 
 </div>
 </div>
@@ -257,1011 +259,793 @@
       <div class="column is-full has-text-centered content">
         <h2 class="title is-3" id="leaderboard">🏆 Leaderboard</h2>
         <div class="content">
-          <!-- <p class="mt-3">Accuracy scores on Video-MME are presented for short, medium, and long videos, taking the corresponding subtitles as input or not.
-          </p>
-          <div class="video-duration">
             <p>
-              <strong>Short Video:</strong> &lt; 2min  
-              <strong>Medium Video:</strong> 4min ~ 15min
-              <strong>Long Video:</strong> 30min ~ 60min
-            </p> -->
-            <p>
-              By default, this leaderboard is sorted by overall results. To view other sorted results, please click on the corresponding cell. <span style="background-color: #DAE8FC;">Colored rows</span> indicate closed-source models/APIs.
+              By default, this leaderboard is sorted by overall results. To view other sorted results, please click on the corresponding cell.
             </p>
-          <!-- </div> -->
-          <table class="js-sort-table js-sort-asc" id="results" style="margin-left: auto; margin-right: auto;">
-              <thead>
-                  <tr>
-                      <th rowspan="1" style="vertical-align: middle; width: 50px;" data-js-sort-colNum="4"><strong>#</strong></th>
-                      <th rowspan="1" class="no-sort" style="vertical-align: middle; width: 180px;" data-js-sort-colNum="NaN"><strong>Model</strong></th>
-                      <th rowspan="1" class="no-sort" style="vertical-align: middle; width: 30px;" data-js-sort-colNum="NaN"><strong>LLM <br>Params</strong></th>
-                      <th colspan="1" style="vertical-align: middle; width: 110px;" data-js-sort-colNum="3"><strong>Frames</strong></th>
-                      <th colspan="1" style="vertical-align: middle; width: 110px;" data-js-sort-colNum="3"><strong>Date</strong></th>
-                      <th colspan="1" style="vertical-align: middle; width: 120px;" data-js-sort-colNum="4"><strong>Overall (%)</strong></th>
-                      <th colspan="1" style="vertical-align: middle; width: 120px;" data-js-sort-colNum="5"><strong><span style="color: rgba(46,151,78,1);">CA (%)</span></strong></th>
-                      <th colspan="1" style="vertical-align: middle; width: 120px;" data-js-sort-colNum="6"><strong><span style="color: rgba(45,125,178,1);">CU (%)</span></strong></th>
-                      <th colspan="1" style="vertical-align: middle; width: 120px;" data-js-sort-colNum="7"><strong><span style="color: rgba(239,120,24,1);">NU (%)</span></strong></th>
-                      <th colspan="1" style="vertical-align: middle; width: 120px;" data-js-sort-colNum="8"><strong><span style="color: rgba(114,97,171,1);">SP (%)</span></strong></th>
-                      <th colspan="1" style="vertical-align: middle; width: 120px;" data-js-sort-colNum="9"><strong><span style="color: rgba(216,37,34,1);">MA (%)</span></strong></th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr style="background-color: #DAE8FC;">
-                      <td style="vertical-align: middle;">🥇</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-preview" class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini-2.5-flash-preview</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">1fps</td>
-                      <td style="vertical-align: middle;">2025/05/05</td>
-                      <td style="vertical-align: middle;">69.11</td>
-                      <td style="vertical-align: middle;">58.95</td>
-                      <td style="vertical-align: middle;">73.33</td>
-                      <td style="vertical-align: middle;">86.11</td>
-                      <td style="vertical-align: middle;">55.74</td>
-                      <td style="vertical-align: middle;">81.82</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">🥈</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-72b-ov-chat" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-OneVision-72B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Bytedance & NTU S-Lab</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">72B</td>
-                      <td style="vertical-align: middle;">32</td>
-                      <td style="vertical-align: middle;">2024/11/10</td>
-                      <td style="vertical-align: middle;">63.31</td>
-                      <td style="vertical-align: middle;">61.18</td>
-                      <td style="vertical-align: middle;">76.67</td>
-                      <td style="vertical-align: middle;">78.32</td>
-                      <td style="vertical-align: middle;">33.77</td>
-                      <td style="vertical-align: middle;">69.42</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">🥉</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/OpenGVLab/InternVL2-40B" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-40B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">34B</td>
-                      <td style="vertical-align: middle;">16</td>
-                      <td style="vertical-align: middle;">2024/10/31</td>
-                      <td style="vertical-align: middle;">60.73</td>
-                      <td style="vertical-align: middle;">54.95</td>
-                      <td style="vertical-align: middle;">69.44</td>
-                      <td style="vertical-align: middle;">65.47</td>
-                      <td style="vertical-align: middle;">56.07</td>
-                      <td style="vertical-align: middle;">70.25</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">4</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/OpenGVLab/InternVL2-Llama3-76B" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-76B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">70B</td>
-                      <td style="vertical-align: middle;">16</td>
-                      <td style="vertical-align: middle;">2024/10/31</td>
-                      <td style="vertical-align: middle;">58.73</td>
-                      <td style="vertical-align: middle;">51.92</td>
-                      <td style="vertical-align: middle;">72.78</td>
-                      <td style="vertical-align: middle;">64.84</td>
-                      <td style="vertical-align: middle;">52.79</td>
-                      <td style="vertical-align: middle;">63.64</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">5</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/Qwen/Qwen2-VL-72B-Instruct" class="ext-link" style="font-size: 16px; margin-left: 5px;">Qwen2-VL-72B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p>
-                      </b></td>
-                      <td style="vertical-align: middle;">72B</td>
-                      <td style="vertical-align: middle;">2fps</td>
-                      <td style="vertical-align: middle;">2024/11/02</td>
-                      <td style="vertical-align: middle;">58.68</td>
-                      <td style="vertical-align: middle;">50.48</td>
-                      <td style="vertical-align: middle;">60.00</td>
-                      <td style="vertical-align: middle;">71.16</td>
-                      <td style="vertical-align: middle;">60.00</td>
-                      <td style="vertical-align: middle;">46.28</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">6</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/DAMO-NLP-SG/VideoLLaMA2-72B" class="ext-link" style="font-size: 16px; margin-left: 5px;">Video-LLaMA2-72B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">DAMO Academy & Alibaba Group</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">72B</td>
-                      <td style="vertical-align: middle;">32</td>
-                      <td style="vertical-align: middle;">2024/11/07</td>
-                      <td style="vertical-align: middle;">58.62</td>
-                      <td style="vertical-align: middle;">54.15</td>
-                      <td style="vertical-align: middle;">71.67</td>
-                      <td style="vertical-align: middle;">65.68</td>
-                      <td style="vertical-align: middle;">48.52</td>
-                      <td style="vertical-align: middle;">59.50</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">7</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/OpenGVLab/InternVL2-8B" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-8B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">16</td>
-                      <td style="vertical-align: middle;">2024/10/30</td>
-                      <td style="vertical-align: middle;">54.63</td>
-                      <td style="vertical-align: middle;">57.03</td>
-                      <td style="vertical-align: middle;">62.78</td>
-                      <td style="vertical-align: middle;">53.68</td>
-                      <td style="vertical-align: middle;">45.57</td>
-                      <td style="vertical-align: middle;">56.20</td>
-                  </tr>
-                  <tr style="background-color: #DAE8FC;">
-                      <td style="vertical-align: middle;">8</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://openai.com/index/hello-gpt-4o/" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o</a> 
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">1fps</td>
-                      <td style="vertical-align: middle;">2024/11/03</td>
-                      <td style="vertical-align: middle;">52.93</td>
-                      <td style="vertical-align: middle;">45.37</td>
-                      <td style="vertical-align: middle;">57.22</td>
-                      <td style="vertical-align: middle;">65.68</td>
-                      <td style="vertical-align: middle;">39.67</td>
-                      <td style="vertical-align: middle;">68.60</td>
-                  </tr>
-                  <tr style="background-color: #DAE8FC;">
-                      <td style="vertical-align: middle;">9</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://deepmind.google/technologies/gemini/flash/" class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini-1.5-Flash</a> 
-                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">1fps</td>
-                      <td style="vertical-align: middle;">2024/11/04</td>
-                      <td style="vertical-align: middle;">52.40</td>
-                      <td style="vertical-align: middle;">42.65</td>
-                      <td style="vertical-align: middle;">65.00</td>
-                      <td style="vertical-align: middle;">62.74</td>
-                      <td style="vertical-align: middle;">42.95</td>
-                      <td style="vertical-align: middle;">66.94</td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: middle;">10</td>
-                    <td style="text-align: left; padding: 2px 10px;">
-                        <b class="">
-                            <a href="https://github.com/X-PLUG/mPLUG-Owl/tree/main/mPLUG-Owl3" class="ext-link" style="font-size: 16px; margin-left: 5px;">mPLUG-Owl3</a> 
-                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba Group</p>
-                        </b>
-                    </td>
-                    <td style="vertical-align: middle;">7B</td>
-                    <td style="vertical-align: middle;">16</td>
-                    <td style="vertical-align: middle;">2024/12/09</td>
-                    <td style="vertical-align: middle;">52.29</td>
-                    <td style="vertical-align: middle;">48.72</td>
-                    <td style="vertical-align: middle;">63.33</td>
-                    <td style="vertical-align: middle;">60.21</td>
-                    <td style="vertical-align: middle;">39.01</td>
-                    <td style="vertical-align: middle;">56.19</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">11</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/Efficient-Large-Model/VILA1.5-40b" class="ext-link" style="font-size: 16px; margin-left: 5px;">VILA-1.5-40B</a> 
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">NVIDIA & MIT</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">34B</td>
-                      <td style="vertical-align: middle;">14</td>
-                      <td style="vertical-align: middle;">2024/11/02</td>
-                      <td style="vertical-align: middle;">51.23</td>
-                      <td style="vertical-align: middle;">47.28</td>
-                      <td style="vertical-align: middle;">62.78</td>
-                      <td style="vertical-align: middle;">55.79</td>
-                      <td style="vertical-align: middle;">39.02</td>
-                      <td style="vertical-align: middle;">66.94</td>
-                  </tr>
-                  <tr style="background-color: #DAE8FC;">
-                      <td style="vertical-align: middle;">12</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o mini</a> 
-                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">1fps</td>
-                      <td style="vertical-align: middle;">2024/11/03</td>
-                      <td style="vertical-align: middle;">50.23</td>
-                      <td style="vertical-align: middle;">44.41</td>
-                      <td style="vertical-align: middle;">53.89</td>
-                      <td style="vertical-align: middle;">60.21</td>
-                      <td style="vertical-align: middle;">38.69</td>
-                      <td style="vertical-align: middle;">64.46</td>
-                  </tr>
-                  <tr style="background-color: #DAE8FC;">
-                      <td style="vertical-align: middle;">13</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://deepmind.google/technologies/gemini/pro/" class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini-1.5-Pro</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
-                      </b></td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">1fps</td>
-                      <td style="vertical-align: middle;">2024/11/04</td>
-                      <td style="vertical-align: middle;">49.36</td>
-                      <td style="vertical-align: middle;">45.37</td>
-                      <td style="vertical-align: middle;">67.22</td>
-                      <td style="vertical-align: middle;">41.89</td>
-                      <td style="vertical-align: middle;">48.52</td>
-                      <td style="vertical-align: middle;">74.38</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">14</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct" class="ext-link" style="font-size: 16px; margin-left: 5px;">Qwen2-VL-7B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">2fps</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">49.30</td>
-                      <td style="vertical-align: middle;">34.35</td>
-                      <td style="vertical-align: middle;">56.67</td>
-                      <td style="vertical-align: middle;">61.05</td>
-                      <td style="vertical-align: middle;">57.38</td>
-                      <td style="vertical-align: middle;">48.76</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">15</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/THUdyh/Oryx-7B" class="ext-link" style="font-size: 16px; margin-left: 5px;">Oryx-7B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Tsinghua University & Tencent & S-Lab, NTU</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">16</td>
-                      <td style="vertical-align: middle;">2024/11/07</td>
-                      <td style="vertical-align: middle;">48.77</td>
-                      <td style="vertical-align: middle;">48.40</td>
-                      <td style="vertical-align: middle;">67.22</td>
-                      <td style="vertical-align: middle;">41.47</td>
-                      <td style="vertical-align: middle;">50.49</td>
-                      <td style="vertical-align: middle;">47.11</td>
-                  </tr>
-                  <tr style="background-color: #DAE8FC;">
-                      <td style="vertical-align: middle;">16</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-flash-8b" class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini-1.5-Flash-8B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
-                      </b></td>
-                      <td style="vertical-align: middle;">8B</td>
-                      <td style="vertical-align: middle;">1fps</td>
-                      <td style="vertical-align: middle;">2024/11/04</td>
-                      <td style="vertical-align: middle;">48.59</td>
-                      <td style="vertical-align: middle;">48.56</td>
-                      <td style="vertical-align: middle;">48.33</td>
-                      <td style="vertical-align: middle;">52.63</td>
-                      <td style="vertical-align: middle;">39.02</td>
-                      <td style="vertical-align: middle;">57.02</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">17</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/DAMO-NLP-SG/VideoLLaMA2.1-7B-16F" class="ext-link" style="font-size: 16px; margin-left: 5px;">Video-LLaMA2.1</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab & CUHK & SenseTime</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">32</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">47.77</td>
-                      <td style="vertical-align: middle;">39.94</td>
-                      <td style="vertical-align: middle;">60.56</td>
-                      <td style="vertical-align: middle;">52.84</td>
-                      <td style="vertical-align: middle;">46.23</td>
-                      <td style="vertical-align: middle;">52.89</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">18</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/OpenGVLab/VideoChat2_HD_stage4_Mistral_7B" class="ext-link" style="font-size: 16px; margin-left: 5px;">VideoChat2</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab </p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">10</td>
-                      <td style="vertical-align: middle;">2024/11/05</td>
-                      <td style="vertical-align: middle;">47.13</td>
-                      <td style="vertical-align: middle;">38.98</td>
-                      <td style="vertical-align: middle;">60.00</td>
-                      <td style="vertical-align: middle;">45.47</td>
-                      <td style="vertical-align: middle;">56.07</td>
-                      <td style="vertical-align: middle;">53.72</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">19</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/OpenGVLab/InternVL2-26B" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-26B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">20B</td>
-                      <td style="vertical-align: middle;">16</td>
-                      <td style="vertical-align: middle;">2024/10/30</td>
-                      <td style="vertical-align: middle;">46.42</td>
-                      <td style="vertical-align: middle;">40.10</td>
-                      <td style="vertical-align: middle;">63.89</td>
-                      <td style="vertical-align: middle;">51.16</td>
-                      <td style="vertical-align: middle;">38.36</td>
-                      <td style="vertical-align: middle;">54.55</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">20</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/lmms-lab/LongVA-7B" class="ext-link" style="font-size: 16px; margin-left: 5px;">LongVA</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">NTU S-Lab</p>
-                      </b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">8</td>
-                      <td style="vertical-align: middle;">2024/10/29</td>
-                      <td style="vertical-align: middle;">43.73</td>
-                      <td style="vertical-align: middle;">37.54</td>
-                      <td style="vertical-align: middle;">51.67</td>
-                      <td style="vertical-align: middle;">41.89</td>
-                      <td style="vertical-align: middle;">49.51</td>
-                      <td style="vertical-align: middle;">56.20</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">21</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/openbmb/MiniCPM-V-2_6" class="ext-link" style="font-size: 16px; margin-left: 5px;">MiniCPM-V2.6</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenBmB</p>
-                      </b></td>
-                      <td style="vertical-align: middle;">8B</td>
-                      <td style="vertical-align: middle;">64</td>
-                      <td style="vertical-align: middle;">2024/11/01</td>
-                      <td style="vertical-align: middle;">42.50</td>
-                      <td style="vertical-align: middle;">38.18</td>
-                      <td style="vertical-align: middle;">60.00</td>
-                      <td style="vertical-align: middle;">40.84</td>
-                      <td style="vertical-align: middle;">38.36</td>
-                      <td style="vertical-align: middle;">55.37</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">22</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/OpenGVLab/InternVL2-4B" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-4B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">3.8B</td>
-                      <td style="vertical-align: middle;">16</td>
-                      <td style="vertical-align: middle;">2024/10/30</td>
-                      <td style="vertical-align: middle;">41.68</td>
-                      <td style="vertical-align: middle;">32.11</td>
-                      <td style="vertical-align: middle;">51.67</td>
-                      <td style="vertical-align: middle;">44.00</td>
-                      <td style="vertical-align: middle;">48.85</td>
-                      <td style="vertical-align: middle;">48.76</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">23</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/DAMO-NLP-SG/VideoLLaMA2.1-7B-AV" class="ext-link" style="font-size: 16px; margin-left: 5px;">Video-LLaMA2.1-AV</a> 
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">DAMO Academy & Alibaba</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">32</td>
-                      <td style="vertical-align: middle;">2024/11/06</td>
-                      <td style="vertical-align: middle;">41.50</td>
-                      <td style="vertical-align: middle;">37.06</td>
-                      <td style="vertical-align: middle;">58.89</td>
-                      <td style="vertical-align: middle;">38.11</td>
-                      <td style="vertical-align: middle;">39.67</td>
-                      <td style="vertical-align: middle;">56.20</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">24</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/Efficient-Large-Model/Llama-3-VILA1.5-8B" class="ext-link" style="font-size: 16px; margin-left: 5px;">VILA-1.5-8B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Nvidia</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">8B</td>
-                      <td style="vertical-align: middle;">4</td>
-                      <td style="vertical-align: middle;">2024/10/29</td>
-                      <td style="vertical-align: middle;">40.21</td>
-                      <td style="vertical-align: middle;">36.26</td>
-                      <td style="vertical-align: middle;">51.67</td>
-                      <td style="vertical-align: middle;">33.68</td>
-                      <td style="vertical-align: middle;">45.25</td>
-                      <td style="vertical-align: middle;">56.20</td>
-                  </tr>
-                  <tr style="background-color: #DAE8FC;">
-                      <td style="vertical-align: middle;">25</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://openai.com/index/new-models-and-developer-products-announced-at-devday/" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4-turbo</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">1fps</td>
-                      <td style="vertical-align: middle;">2023/11/03</td>
-                      <td style="vertical-align: middle;">39.86</td>
-                      <td style="vertical-align: middle;">31.79</td>
-                      <td style="vertical-align: middle;">46.67</td>
-                      <td style="vertical-align: middle;">45.47</td>
-                      <td style="vertical-align: middle;">37.70</td>
-                      <td style="vertical-align: middle;">54.55</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">26</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/aws-prototyping/long-llava-qwen2-7b" class="ext-link" style="font-size: 16px; margin-left: 5px;">LongLLaVA</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Amazon</p>
-                      </b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">64</td>
-                      <td style="vertical-align: middle;">2024/11/01</td>
-                      <td style="vertical-align: middle;">38.45</td>
-                      <td style="vertical-align: middle;">30.83</td>
-                      <td style="vertical-align: middle;">47.78</td>
-                      <td style="vertical-align: middle;">40.21</td>
-                      <td style="vertical-align: middle;">43.61</td>
-                      <td style="vertical-align: middle;">43.80</td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: middle;">27</td>
-                    <td style="text-align: left; padding: 2px 10px;">
-                        <b class="">
-                            <a href="https://huggingface.co/Chat-UniVi/Chat-UniVi-7B-v1.5" class="ext-link" style="font-size: 16px; margin-left: 5px;">Chat-UniVi-v1.5</a>
-                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">PKU</p>
-                    </b></td>
-                    <td style="vertical-align: middle;">7B</td>
-                    <td style="vertical-align: middle;">4</td>
-                    <td style="vertical-align: middle;">2024/11/06</td>
-                    <td style="vertical-align: middle;">28.02</td>
-                    <td style="vertical-align: middle;">28.91</td>
-                    <td style="vertical-align: middle;">31.11</td>
-                    <td style="vertical-align: middle;">25.26</td>
-                    <td style="vertical-align: middle;">23.93</td>
-                    <td style="vertical-align: middle;">39.67</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">28</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/KangarooGroup/kangaroo" class="ext-link" style="font-size: 16px; margin-left: 5px;">Kangaroo</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Meituan & UCAS</p>
-                      </b></td>
-                      <td style="vertical-align: middle;">8B</td>
-                      <td style="vertical-align: middle;">64</td>
-                      <td style="vertical-align: middle;">2024/10/31</td>
-                      <td style="vertical-align: middle;">37.10</td>
-                      <td style="vertical-align: middle;">31.79</td>
-                      <td style="vertical-align: middle;">51.67</td>
-                      <td style="vertical-align: middle;">29.05</td>
-                      <td style="vertical-align: middle;">53.44</td>
-                      <td style="vertical-align: middle;">33.06</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">29</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/OpenGVLab/InternVL2-2B" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-2B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
-                      </b></td>
-                      <td style="vertical-align: middle;">1.8B</td>
-                      <td style="vertical-align: middle;">16</td>
-                      <td style="vertical-align: middle;">2024/11/01</td>
-                      <td style="vertical-align: middle;">36.75</td>
-                      <td style="vertical-align: middle;">24.28</td>
-                      <td style="vertical-align: middle;">54.44</td>
-                      <td style="vertical-align: middle;">35.16</td>
-                      <td style="vertical-align: middle;">47.54</td>
-                      <td style="vertical-align: middle;">53.72</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">30</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/collections/Efficient-Large-Model/longvila-66c3fce79284c8209f119b32" class="ext-link" style="font-size: 16px; margin-left: 5px;">LongVILA</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Nvidia</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">8B</td>
-                      <td style="vertical-align: middle;">32</td>
-                      <td style="vertical-align: middle;">2024/11/03</td>
-                      <td style="vertical-align: middle;">36.46</td>
-                      <td style="vertical-align: middle;">33.55</td>
-                      <td style="vertical-align: middle;">49.44</td>
-                      <td style="vertical-align: middle;">28.84</td>
-                      <td style="vertical-align: middle;">37.05</td>
-                      <td style="vertical-align: middle;">60.33</td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: middle;">31</td>
-                    <td style="text-align: left; padding: 2px 10px;">
-                        <b class="">
-                            <a href="https://huggingface.co/wchai/AuroraCap-7B-VID-xtuner" class="ext-link" style="font-size: 16px; margin-left: 5px;">AuroraCap</a>
-                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">University of Washington</p>
-                        </b>
-                    </td>
-                    <td style="vertical-align: middle;">7B</td>
-                    <td style="vertical-align: middle;">8</td>
-                    <td style="vertical-align: middle;">2024/10/28</td>
-                    <td style="vertical-align: middle;">36.28</td>
-                    <td style="vertical-align: middle;">38.98</td>
-                    <td style="vertical-align: middle;">45.00</td>
-                    <td style="vertical-align: middle;">28.63</td>
-                    <td style="vertical-align: middle;">32.13</td>
-                    <td style="vertical-align: middle;">49.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">32</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct" class="ext-link" style="font-size: 16px; margin-left: 5px;">Qwen2-VL-2B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">2B</td>
-                      <td style="vertical-align: middle;">2fps</td>
-                      <td style="vertical-align: middle;">2024/11/02</td>
-                      <td style="vertical-align: middle;">36.17</td>
-                      <td style="vertical-align: middle;">25.08</td>
-                      <td style="vertical-align: middle;">47.22</td>
-                      <td style="vertical-align: middle;">37.05</td>
-                      <td style="vertical-align: middle;">47.54</td>
-                      <td style="vertical-align: middle;">44.63</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">33</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/DAMO-NLP-SG/VideoLLaMA2-7B" class="ext-link" style="font-size: 16px; margin-left: 5px;">Video-LLaMA2-7B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">DAMO Academy & Alibaba</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">32</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">34.35</td>
-                      <td style="vertical-align: middle;">25.88</td>
-                      <td style="vertical-align: middle;">47.78</td>
-                      <td style="vertical-align: middle;">28.84</td>
-                      <td style="vertical-align: middle;">45.90</td>
-                      <td style="vertical-align: middle;">50.41</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">34</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/Efficient-Large-Model/VILA1.5-3b" class="ext-link" style="font-size: 16px; margin-left: 5px;">VILA-1.5-3B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Nvidia</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">3B</td>
-                      <td style="vertical-align: middle;">10</td>
-                      <td style="vertical-align: middle;">2024/10/30</td>
-                      <td style="vertical-align: middle;">31.95</td>
-                      <td style="vertical-align: middle;">30.03</td>
-                      <td style="vertical-align: middle;">42.78</td>
-                      <td style="vertical-align: middle;">18.32</td>
-                      <td style="vertical-align: middle;">42.95</td>
-                      <td style="vertical-align: middle;">51.24</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">35</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/LanguageBind/Video-LLaVA-7B" class="ext-link" style="font-size: 16px; margin-left: 5px;">Video-LLaVA</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">PKU</p>
-                      </b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">8</td>
-                      <td style="vertical-align: middle;">2024/11/01</td>
-                      <td style="vertical-align: middle;">31.07</td>
-                      <td style="vertical-align: middle;">30.03</td>
-                      <td style="vertical-align: middle;">34.44</td>
-                      <td style="vertical-align: middle;">24.84</td>
-                      <td style="vertical-align: middle;">36.39</td>
-                      <td style="vertical-align: middle;">42.15</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">36</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/Chat-UniVi/Chat-UniVi" class="ext-link" style="font-size: 16px; margin-left: 5px;">Chat-UniVi</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">PKU</p>
-                      </b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">4</td>
-                      <td style="vertical-align: middle;">2023/10/28</td>
-                      <td style="vertical-align: middle;">28.02</td>
-                      <td style="vertical-align: middle;">28.91</td>
-                      <td style="vertical-align: middle;">31.11</td>
-                      <td style="vertical-align: middle;">25.26</td>
-                      <td style="vertical-align: middle;">23.93</td>
-                      <td style="vertical-align: middle;">39.67</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">37</td>
-                      <td style="text-align: left; padding: 2px 10px;">
-                          <b class="">
-                              <a href="https://huggingface.co/OpenGVLab/InternVL2-1B" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-1B</a>
-                              <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">0.5B</td>
-                      <td style="vertical-align: middle;">16</td>
-                      <td style="vertical-align: middle;">2024/10/30</td>
-                      <td style="vertical-align: middle;">26.61</td>
-                      <td style="vertical-align: middle;">24.12</td>
-                      <td style="vertical-align: middle;">28.33</td>
-                      <td style="vertical-align: middle;">26.53</td>
-                      <td style="vertical-align: middle;">29.84</td>
-                      <td style="vertical-align: middle;">28.93</td>
-                  </tr>
-                  <tr style="background-color: #FDEEF4;">
-                      <td style="vertical-align: middle;">38</td>
-                      <td style="text-align: left; vertical-align: middle; padding: 2px 10px;">
-                          <b>
-                              <a style="font-size: 16px; margin-left: 5px;">RANDOM</a>
-                              <!-- <p style="font-size: 12px; margin-left: 5px; color: #858383;">BAAI</p> -->
-                          </b>
-                      </td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">25.28</td>
-                      <td style="vertical-align: middle;">25.70</td>
-                      <td style="vertical-align: middle;">24.28</td>
-                      <td style="vertical-align: middle;">25.12</td>
-                      <td style="vertical-align: middle;">24.62</td>
-                      <td style="vertical-align: middle;">26.61</td>
-                  </tr>
-                  <!-- <tr>
-                      <td style="vertical-align: middle;">35</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/favor123/llava-hr-13b-x-sft-1024" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-HR-13B
-                      <p style="font-size: 12px; margin-left: 5px; color: #858383;">Xiamen University</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">13B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">46.02</td>
-                      <td style="vertical-align: middle;">41.83</td>
-                      <td style="vertical-align: middle;">51.26</td>
-                      <td style="vertical-align: middle;">48.80</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">36</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/ConvLLaVA/ConvLLaVA-sft-1536" class="ext-link" style="font-size: 16px; margin-left: 5px;">ConvLLaVA-1536-7B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba & Tsinghua University</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">45.52</td>
-                      <td style="vertical-align: middle;">41.84</td>
-                      <td style="vertical-align: middle;">54.09</td>
-                      <td style="vertical-align: middle;">34.20</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">37</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/OpenGVLab/InternVL2-2B" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-2B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
-                      </a> </b></td>
-                      <td style="vertical-align: middle;">2B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">45.11</td>
-                      <td style="vertical-align: middle;">42.37</td>
-                      <td style="vertical-align: middle;">51.07</td>
-                      <td style="vertical-align: middle;">38.16</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">38</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/echo840/Monkey" class="ext-link" style="font-size: 16px; margin-left: 5px;">Monkey-Chat
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">HUST</p>
-                      </a> </b></td>
-                      <td style="vertical-align: middle;">7.7B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">44.90</td>
-                      <td style="vertical-align: middle;">41.79</td>
-                      <td style="vertical-align: middle;">48.24</td>
-                      <td style="vertical-align: middle;">48.91</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">39</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/YanweiLi/MGM-13B" class="ext-link" style="font-size: 16px; margin-left: 5px;">Mini-Gemini-13B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">CUHK & SmartMore</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">13B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">43.74</td>
-                      <td style="vertical-align: middle;">38.51</td>
-                      <td style="vertical-align: middle;">54.60</td>
-                      <td style="vertical-align: middle;">32.28</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">40</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/yifanzhang114/SliME-vicuna-7B" class="ext-link" style="font-size: 16px; margin-left: 5px;">SliME-7B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">UCAS & Squirrel AI & Alibaba & Meta</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">43.45</td>
-                      <td style="vertical-align: middle;">40.56</td>
-                      <td style="vertical-align: middle;">51.51</td>
-                      <td style="vertical-align: middle;">30.03</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">41</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/WeihuangLin/INF_star-LLaVA-sft" class="ext-link" style="font-size: 16px; margin-left: 5px;">INF-LLaVA*
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">Xiamen University</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">8B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">43.32</td>
-                      <td style="vertical-align: middle;">40.13</td>
-                      <td style="vertical-align: middle;">51.39</td>
-                      <td style="vertical-align: middle;">31.41</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">42</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/yifanzhang114/SliME-Llama3-8B" class="ext-link" style="font-size: 16px; margin-left: 5px;">SliME-8B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">UCAS & Squirrel AI & Alibaba & Meta</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">8B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">43.29</td>
-                      <td style="vertical-align: middle;">40.44</td>
-                      <td style="vertical-align: middle;">51.26</td>
-                      <td style="vertical-align: middle;">29.96</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">43</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/WeihuangLin/INF-LLaVA-sft" class="ext-link" style="font-size: 16px; margin-left: 5px;">INF-LLaVA
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">Xiamen University</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">8B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">43.04</td>
-                      <td style="vertical-align: middle;">41.80</td>
-                      <td style="vertical-align: middle;">46.98</td>
-                      <td style="vertical-align: middle;">35.58</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">44</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/favor123/llava-hr-7b-x-sft-1024" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-HR-7B
-                      <p style="font-size: 12px; margin-left: 5px; color: #858383;">Xiamen University</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">42.73</td>
-                      <td style="vertical-align: middle;">39.38</td>
-                      <td style="vertical-align: middle;">50.38</td>
-                      <td style="vertical-align: middle;">33.04</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">45</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/yifanzhang114/SliME-vicuna-13B" class="ext-link" style="font-size: 16px; margin-left: 5px;">SliME-13B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">UCAS & Squirrel AI & Alibaba & Meta</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">13B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">42.63</td>
-                      <td style="vertical-align: middle;">39.30</td>
-                      <td style="vertical-align: middle;">50.06</td>
-                      <td style="vertical-align: middle;">33.55</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">46</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/ConvLLaVA/ConvLLaVA-sft-768" class="ext-link" style="font-size: 16px; margin-left: 5px;">ConvLLaVA-768-7B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba & Tsinghua University</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">42.40</td>
-                      <td style="vertical-align: middle;">36.51</td>
-                      <td style="vertical-align: middle;">52.46</td>
-                      <td style="vertical-align: middle;">37.11</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">47</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/OpenGVLab/InternVL2-1B" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-1B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
-                      </a> </b></td>
-                      <td style="vertical-align: middle;">1B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">42.06</td>
-                      <td style="vertical-align: middle;">39.65</td>
-                      <td style="vertical-align: middle;">49.62</td>
-                      <td style="vertical-align: middle;">27.89</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">48</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/YanweiLi/MGM-13B-HD" class="ext-link" style="font-size: 16px; margin-left: 5px;">Mini-Gemini-13B-HD
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">CUHK & SmartMore</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">13B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">41.99</td>
-                      <td style="vertical-align: middle;">37.24</td>
-                      <td style="vertical-align: middle;">51.07</td>
-                      <td style="vertical-align: middle;">34.28</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">49</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/Qwen/Qwen-VL-Chat" class="ext-link" style="font-size: 16px; margin-left: 5px;">Qwen-VL-Chat
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">13B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">41.64</td>
-                      <td style="vertical-align: middle;">36.10</td>
-                      <td style="vertical-align: middle;">49.69</td>
-                      <td style="vertical-align: middle;">41.54</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">50</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/menglc/deepstack-l-vicuna-7b" class="ext-link" style="font-size: 16px; margin-left: 5px;">DeepStack-L-HD-Vicuna-7B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">Fudan University & Microsoft</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">40.26</td>
-                      <td style="vertical-align: middle;">35.19</td>
-                      <td style="vertical-align: middle;">48.87</td>
-                      <td style="vertical-align: middle;">35.88</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">51</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/menglc/deepstack-l-vicuna-7b" class="ext-link" style="font-size: 16px; margin-left: 5px;">DeepStack-L-Vicuna-7B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">Fudan University & Microsoft</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">39.75</td>
-                      <td style="vertical-align: middle;">36.92</td>
-                      <td style="vertical-align: middle;">46.60</td>
-                      <td style="vertical-align: middle;">30.21</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">52</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/liuhaotian/llava-v1.6-vicuna-13b" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-1.6-Vicuna-13B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">NTU & UW Madison & ByteDance</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">13B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">38.03</td>
-                      <td style="vertical-align: middle;">31.15</td>
-                      <td style="vertical-align: middle;">47.92</td>
-                      <td style="vertical-align: middle;">38.16</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">53</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/liuhaotian/llava-v1.6-mistral-7b" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-1.6-Mistral-7B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">NTU & UW Madison & ByteDance</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">7B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">37.18</td>
-                      <td style="vertical-align: middle;">33.64</td>
-                      <td style="vertical-align: middle;">42.00</td>
-                      <td style="vertical-align: middle;">38.24</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">54</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://huggingface.co/liuhaotian/llava-v1.5-13b" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-1.5-13B
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">NTU & UW Madison & ByteDance</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">13B</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">36.07</td>
-                      <td style="vertical-align: middle;">29.91</td>
-                      <td style="vertical-align: middle;">43.45</td>
-                      <td style="vertical-align: middle;">41.39</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr>
-                  <tr>
-                      <td style="vertical-align: middle;">55</td>
-                      <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Random Choice
-                          <p style="font-size: 12px; margin-left: 5px; color: #858383;">-</p>
-                      </a></b></td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">2024/10/28</td>
-                      <td style="vertical-align: middle;">30.15</td>
-                      <td style="vertical-align: middle;">24.88</td>
-                      <td style="vertical-align: middle;">38.22</td>
-                      <td style="vertical-align: middle;">28.61</td>
-                      <td style="vertical-align: middle;">73.99</td>
-                      <td style="vertical-align: middle;">59.59</td>
-                  </tr> -->
-                  </tbody>
-                  </table>
-        <!-- <p style="text-align: left;">
-          1* The short and medium videos are sampled at 1 fps, while the long videos are sampled at 2 fps to ensure the stability of the API.
-          <br>2* The videos less than 384 seconds are sampled at 1 fps, and for those longer than 384 seconds, we extract 384 frames uniformly. All the frames are resized to 512x512 resolution to fit within GPT-4o’s max context length.
-        </p> -->
+            <table class="js-sort-table js-sort-asc" id="results" style="margin-left: auto; margin-right: auto;">
+                <thead>
+                    <tr>
+                        <th rowspan="1" style="vertical-align: middle; width: 180px;"><strong>Model</strong></th>
+                        <th colspan="4" style="vertical-align: middle;"><strong>Perspective Perception</strong></th>
+                        <th colspan="5" style="vertical-align: middle;"><strong>Perspective Reasoning</strong></th>
+                        <th colspan="3" style="vertical-align: middle;"><strong>P'Percep & P'Reason</strong></th>
+                        <th rowspan="1" style="vertical-align: middle;"><strong>Robustness</strong></th>
+                    </tr>
+                    <tr>
+                        <th style="vertical-align: middle;">Model</th>
+                        <th style="vertical-align: middle;">VPP</th>
+                        <th style="vertical-align: middle;">CLP</th>
+                        <th style="vertical-align: middle;">VAP</th>
+                        <th style="vertical-align: middle;">LDP</th>
+                        <th style="vertical-align: middle;">PTR</th>
+                        <th style="vertical-align: middle;">LRR</th>
+                        <th style="vertical-align: middle;">OVR</th>
+                        <th style="vertical-align: middle;">PTS</th>
+                        <th style="vertical-align: middle;">VPC</th>
+                        <th style="vertical-align: middle;">P Acc</th>
+                        <th style="vertical-align: middle;">R Acc</th>
+                        <th style="vertical-align: middle;">Overall</th>
+                        <th style="vertical-align: middle;">P'Robust</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #e9edf6;">
+                        <td colspan="14" style="text-align: center;"><em>MLLMs: < 7B</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>InternVL2.5-2B</strong></td>
+                        <td><strong>47.4</strong></td>
+                        <td>22.8</td>
+                        <td>13.0</td>
+                        <td><strong>65.3</strong></td>
+                        <td><strong>62.2</strong></td>
+                        <td>31.8</td>
+                        <td>16.6</td>
+                        <td>30.0</td>
+                        <td><strong>50.0</strong></td>
+                        <td>37.1</td>
+                        <td><strong>38.1</strong></td>
+                        <td><strong>37.7</strong></td>
+                        <td><strong>46.5</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Qwen2.5-VL-3B</td>
+                        <td>27.6</td>
+                        <td>22.8</td>
+                        <td>56.8</td>
+                        <td>55.1</td>
+                        <td>32.3</td>
+                        <td>32.5</td>
+                        <td>15.9</td>
+                        <td><strong>39.4</strong></td>
+                        <td>44.7</td>
+                        <td>40.6</td>
+                        <td>33.0</td>
+                        <td>36.3</td>
+                        <td>6.4</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2.5-4B</td>
+                        <td>32.1</td>
+                        <td>26.0</td>
+                        <td><strong>59.3</strong></td>
+                        <td>64.2</td>
+                        <td>28.2</td>
+                        <td>30.5</td>
+                        <td>10.7</td>
+                        <td>37.1</td>
+                        <td>36.8</td>
+                        <td><strong>45.4</strong></td>
+                        <td>28.7</td>
+                        <td>36.1</td>
+                        <td>20.6</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL3-2B</td>
+                        <td>22.4</td>
+                        <td><strong>28.5</strong></td>
+                        <td>50.0</td>
+                        <td>44.6</td>
+                        <td>43.1</td>
+                        <td>31.1</td>
+                        <td><strong>34.4</strong></td>
+                        <td>25.4</td>
+                        <td>43.0</td>
+                        <td>36.4</td>
+                        <td>35.4</td>
+                        <td>35.8</td>
+                        <td>23.9</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2-4B</td>
+                        <td>26.9</td>
+                        <td>12.2</td>
+                        <td>54.3</td>
+                        <td>60.4</td>
+                        <td>18.0</td>
+                        <td><strong>40.4</strong></td>
+                        <td>18.8</td>
+                        <td>24.4</td>
+                        <td>45.6</td>
+                        <td>38.4</td>
+                        <td>29.4</td>
+                        <td>33.4</td>
+                        <td>7.9</td>
+                    </tr>
+                    <tr>
+                        <td>Qwen2-VL-2B</td>
+                        <td>12.2</td>
+                        <td>19.5</td>
+                        <td>49.4</td>
+                        <td>35.8</td>
+                        <td>23.3</td>
+                        <td>24.5</td>
+                        <td>28.9</td>
+                        <td>32.9</td>
+                        <td>47.4</td>
+                        <td>29.2</td>
+                        <td>31.4</td>
+                        <td>30.4</td>
+                        <td>4.7</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL3-1B</td>
+                        <td>19.9</td>
+                        <td>13.0</td>
+                        <td>53.7</td>
+                        <td>20.7</td>
+                        <td>16.3</td>
+                        <td>8.6</td>
+                        <td>23.7</td>
+                        <td>21.6</td>
+                        <td>47.4</td>
+                        <td>26.8</td>
+                        <td>23.5</td>
+                        <td>25.0</td>
+                        <td>13.8</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2-1B</td>
+                        <td>20.5</td>
+                        <td>20.3</td>
+                        <td>15.4</td>
+                        <td>24.2</td>
+                        <td>24.1</td>
+                        <td>11.3</td>
+                        <td>24.0</td>
+                        <td>22.1</td>
+                        <td>44.7</td>
+                        <td>20.1</td>
+                        <td>25.2</td>
+                        <td>23.0</td>
+                        <td>6.7</td>
+                    </tr>
+                    <tr>
+                        <td>LLaVA-OV-1B</td>
+                        <td>13.5</td>
+                        <td>14.6</td>
+                        <td>35.8</td>
+                        <td>24.2</td>
+                        <td>15.2</td>
+                        <td>19.2</td>
+                        <td>19.5</td>
+                        <td>22.1</td>
+                        <td>40.4</td>
+                        <td>22.0</td>
+                        <td>23.3</td>
+                        <td>22.7</td>
+                        <td>7.8</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2-2B</td>
+                        <td>26.9</td>
+                        <td>26.0</td>
+                        <td>3.1</td>
+                        <td>36.8</td>
+                        <td>18.8</td>
+                        <td>12.6</td>
+                        <td>23.1</td>
+                        <td>21.1</td>
+                        <td>34.2</td>
+                        <td>23.2</td>
+                        <td>22.0</td>
+                        <td>22.5</td>
+                        <td>12.3</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2.5-1B</td>
+                        <td>14.7</td>
+                        <td>23.6</td>
+                        <td>0.6</td>
+                        <td>33.0</td>
+                        <td>20.1</td>
+                        <td>11.3</td>
+                        <td>13.3</td>
+                        <td>34.7</td>
+                        <td>45.6</td>
+                        <td>18.0</td>
+                        <td>25.0</td>
+                        <td>21.9</td>
+                        <td>18.2</td>
+                    </tr>
+                    <tr style="background-color: #e9edf6;">
+                        <td colspan="14" style="text-align: center;"><em>MLLMs: 7B - 9B</em></td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2.5-8B</td>
+                        <td>38.5</td>
+                        <td>17.9</td>
+                        <td>53.1</td>
+                        <td>75.4</td>
+                        <td>40.8</td>
+                        <td>48.3</td>
+                        <td>34.7</td>
+                        <td>24.9</td>
+                        <td>67.5</td>
+                        <td>46.2</td>
+                        <td>43.3</td>
+                        <td><strong>44.6</strong></td>
+                        <td>22.3</td>
+                    </tr>
+                    <tr>
+                        <td>Qwen2.5-VL-7B</td>
+                        <td>35.3</td>
+                        <td>29.3</td>
+                        <td><strong>70.4</strong></td>
+                        <td>73.7</td>
+                        <td>42.4</td>
+                        <td>44.4</td>
+                        <td>32.1</td>
+                        <td>28.6</td>
+                        <td>44.7</td>
+                        <td>52.1</td>
+                        <td>38.5</td>
+                        <td>44.5</td>
+                        <td>15.3</td>
+                    </tr>
+                    <tr>
+                        <td>Qwen2-VL-7B</td>
+                        <td>34.6</td>
+                        <td>25.2</td>
+                        <td>63.0</td>
+                        <td>64.2</td>
+                        <td>57.1</td>
+                        <td>49.0</td>
+                        <td>27.3</td>
+                        <td>31.0</td>
+                        <td>46.5</td>
+                        <td>46.7</td>
+                        <td>42.2</td>
+                        <td>44.2</td>
+                        <td>25.5</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL3-9B</td>
+                        <td>37.2</td>
+                        <td><strong>33.3</strong></td>
+                        <td>63.0</td>
+                        <td>77.5</td>
+                        <td>30.7</td>
+                        <td><strong>53.0</strong></td>
+                        <td>27.9</td>
+                        <td>23.9</td>
+                        <td>43.9</td>
+                        <td>52.8</td>
+                        <td>35.9</td>
+                        <td>43.4</td>
+                        <td>7.3</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL3-8B</td>
+                        <td><strong>42.3</strong></td>
+                        <td>27.6</td>
+                        <td>67.9</td>
+                        <td><strong>81.8</strong></td>
+                        <td>38.1</td>
+                        <td>46.4</td>
+                        <td>20.8</td>
+                        <td>23.9</td>
+                        <td>32.5</td>
+                        <td><strong>54.9</strong></td>
+                        <td>32.3</td>
+                        <td>42.4</td>
+                        <td>15.9</td>
+                    </tr>
+                    <tr>
+                        <td>LLaVA-OV-7B</td>
+                        <td>34.0</td>
+                        <td><strong>33.3</strong></td>
+                        <td>51.2</td>
+                        <td>57.9</td>
+                        <td>44.9</td>
+                        <td><strong>53.0</strong></td>
+                        <td>19.8</td>
+                        <td><strong>35.2</strong></td>
+                        <td>49.1</td>
+                        <td>44.1</td>
+                        <td>40.4</td>
+                        <td>42.0</td>
+                        <td>15.9</td>
+                    </tr>
+                    <tr>
+                        <td>Eagle-X4-8B</td>
+                        <td>39.1</td>
+                        <td>17.1</td>
+                        <td>46.9</td>
+                        <td>47.7</td>
+                        <td><strong>65.3</strong></td>
+                        <td>37.1</td>
+                        <td>18.2</td>
+                        <td>32.9</td>
+                        <td><strong>68.4</strong></td>
+                        <td>37.7</td>
+                        <td><strong>44.4</strong></td>
+                        <td>41.4</td>
+                        <td><strong>55.3</strong></td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2-8B</td>
+                        <td>33.3</td>
+                        <td>19.5</td>
+                        <td>59.3</td>
+                        <td>73.3</td>
+                        <td>27.1</td>
+                        <td>36.4</td>
+                        <td><strong>42.5</strong></td>
+                        <td>22.1</td>
+                        <td>48.2</td>
+                        <td>46.4</td>
+                        <td>35.3</td>
+                        <td>40.2</td>
+                        <td>7.9</td>
+                    </tr>
+                    <tr>
+                        <td>LLaVA-Next-m-7B</td>
+                        <td>35.9</td>
+                        <td>21.1</td>
+                        <td>35.2</td>
+                        <td>50.5</td>
+                        <td>17.7</td>
+                        <td>37.7</td>
+                        <td>15.6</td>
+                        <td>27.2</td>
+                        <td>46.5</td>
+                        <td>35.7</td>
+                        <td>28.9</td>
+                        <td>31.9</td>
+                        <td>16.4</td>
+                    </tr>
+                    <tr>
+                        <td>Eagle-X5-7B</td>
+                        <td>25.0</td>
+                        <td>26.0</td>
+                        <td>24.7</td>
+                        <td>34.7</td>
+                        <td>22.1</td>
+                        <td>46.4</td>
+                        <td>15.6</td>
+                        <td>20.7</td>
+                        <td>42.1</td>
+                        <td>27.6</td>
+                        <td>29.4</td>
+                        <td>28.6</td>
+                        <td>15.9</td>
+                    </tr>
+                    <tr>
+                        <td>LLaVA-Next-v-7B</td>
+                        <td>16.7</td>
+                        <td>20.3</td>
+                        <td>40.7</td>
+                        <td>39.6</td>
+                        <td>16.3</td>
+                        <td>44.4</td>
+                        <td>19.8</td>
+                        <td>16.4</td>
+                        <td>7.0</td>
+                        <td>29.3</td>
+                        <td>20.8</td>
+                        <td>24.6</td>
+                        <td>16.4</td>
+                    </tr>
+                    <tr style="background-color: #e9edf6;">
+                        <td colspan="14" style="text-align: center;"><em>MLLMs: 10B - 30B</em></td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2.5-26B</td>
+                        <td>41.7</td>
+                        <td><strong>35.0</strong></td>
+                        <td>55.6</td>
+                        <td><strong>81.8</strong></td>
+                        <td>65.5</td>
+                        <td><strong>46.4</strong></td>
+                        <td>43.5</td>
+                        <td><strong>34.3</strong></td>
+                        <td>46.5</td>
+                        <td><strong>53.5</strong></td>
+                        <td><strong>47.2</strong></td>
+                        <td><strong>50.0</strong></td>
+                        <td>33.7</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL3-14B</td>
+                        <td>39.1</td>
+                        <td>26.0</td>
+                        <td><strong>73.5</strong></td>
+                        <td>73.3</td>
+                        <td>36.5</td>
+                        <td>34.4</td>
+                        <td><strong>54.5</strong></td>
+                        <td>28.2</td>
+                        <td>54.4</td>
+                        <td>53.0</td>
+                        <td>41.6</td>
+                        <td>46.7</td>
+                        <td>13.5</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2-26B</td>
+                        <td>28.2</td>
+                        <td><strong>35.0</strong></td>
+                        <td>61.1</td>
+                        <td>74.0</td>
+                        <td>50.7</td>
+                        <td>41.7</td>
+                        <td>28.9</td>
+                        <td>28.6</td>
+                        <td>43.0</td>
+                        <td>49.6</td>
+                        <td>38.6</td>
+                        <td>43.5</td>
+                        <td>26.5</td>
+                    </tr>
+                    <tr>
+                        <td>Eagle-X4-13B</td>
+                        <td><strong>42.3</strong></td>
+                        <td>26.8</td>
+                        <td>41.4</td>
+                        <td>44.6</td>
+                        <td>65.8</td>
+                        <td>20.5</td>
+                        <td>28.2</td>
+                        <td>31.0</td>
+                        <td><strong>57.9</strong></td>
+                        <td>38.8</td>
+                        <td>40.7</td>
+                        <td>39.8</td>
+                        <td><strong>53.8</strong></td>
+                    </tr>
+                    <tr>
+                        <td>LLaVA-Next-13B</td>
+                        <td>7.7</td>
+                        <td>17.1</td>
+                        <td>54.3</td>
+                        <td>34.7</td>
+                        <td><strong>66.7</strong></td>
+                        <td>24.5</td>
+                        <td>13.0</td>
+                        <td>26.8</td>
+                        <td>43.9</td>
+                        <td>28.5</td>
+                        <td>35.0</td>
+                        <td>32.1</td>
+                        <td>51.1</td>
+                    </tr>
+                    <tr style="background-color: #e9edf6;">
+                        <td colspan="14" style="text-align: center;"><em>MLLMs: 30B - 70B</em></td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2.5-38B</td>
+                        <td><strong>46.8</strong></td>
+                        <td><strong>36.6</strong></td>
+                        <td>67.9</td>
+                        <td>89.5</td>
+                        <td>58.4</td>
+                        <td>51.7</td>
+                        <td>38.3</td>
+                        <td><strong>44.1</strong></td>
+                        <td>44.7</td>
+                        <td>60.2</td>
+                        <td><strong>47.5</strong></td>
+                        <td><strong>53.1</strong></td>
+                        <td>19.1</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL3-38B</td>
+                        <td>45.5</td>
+                        <td>35.0</td>
+                        <td><strong>71.0</strong></td>
+                        <td><strong>90.9</strong></td>
+                        <td>37.3</td>
+                        <td>43.0</td>
+                        <td><strong>56.8</strong></td>
+                        <td>37.6</td>
+                        <td>43.0</td>
+                        <td><strong>60.6</strong></td>
+                        <td>43.5</td>
+                        <td>51.1</td>
+                        <td>9.1</td>
+                    </tr>
+                    <tr>
+                        <td>Qwen2.5-VL-32B</td>
+                        <td>35.9</td>
+                        <td>22.8</td>
+                        <td>68.5</td>
+                        <td>73.7</td>
+                        <td><strong>62.0</strong></td>
+                        <td>37.7</td>
+                        <td>33.8</td>
+                        <td>35.2</td>
+                        <td>45.6</td>
+                        <td>50.2</td>
+                        <td>42.9</td>
+                        <td>46.1</td>
+                        <td><strong>25.5</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Eagle-X5-34B</td>
+                        <td>36.5</td>
+                        <td>28.5</td>
+                        <td>60.5</td>
+                        <td>79.6</td>
+                        <td>19.5</td>
+                        <td>51.0</td>
+                        <td>24.0</td>
+                        <td>39.0</td>
+                        <td><strong>63.2</strong></td>
+                        <td>51.3</td>
+                        <td>39.3</td>
+                        <td>44.6</td>
+                        <td>16.0</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2-40B</td>
+                        <td>26.3</td>
+                        <td>22.0</td>
+                        <td>66.0</td>
+                        <td>76.1</td>
+                        <td>43.2</td>
+                        <td><strong>55.0</strong></td>
+                        <td>27.3</td>
+                        <td>25.8</td>
+                        <td>47.4</td>
+                        <td>47.6</td>
+                        <td>39.7</td>
+                        <td>43.2</td>
+                        <td>12.6</td>
+                    </tr>
+                    <tr style="background-color: #e9edf6;">
+                        <td colspan="14" style="text-align: center;"><em>MLLMs: > 70B</em></td>
+                    </tr>
+                    <tr>
+                        <td>InternVL3-78B</td>
+                        <td>43.6</td>
+                        <td><strong>39.8</strong></td>
+                        <td>69.8</td>
+                        <td>89.1</td>
+                        <td>55.9</td>
+                        <td><strong>57.6</strong></td>
+                        <td>40.3</td>
+                        <td>38.0</td>
+                        <td><strong>42.1</strong></td>
+                        <td><strong>60.6</strong></td>
+                        <td>46.8</td>
+                        <td><strong>52.9</strong></td>
+                        <td>25.5</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2.5-72B</td>
+                        <td><strong>47.4</strong></td>
+                        <td>30.1</td>
+                        <td>67.3</td>
+                        <td>89.5</td>
+                        <td>65.2</td>
+                        <td>53.6</td>
+                        <td><strong>41.9</strong></td>
+                        <td>32.4</td>
+                        <td>37.7</td>
+                        <td>58.6</td>
+                        <td>46.2</td>
+                        <td>51.7</td>
+                        <td>29.7</td>
+                    </tr>
+                    <tr>
+                        <td>Qwen2.5-VL-72B</td>
+                        <td>41.7</td>
+                        <td>31.7</td>
+                        <td>67.9</td>
+                        <td>82.1</td>
+                        <td>65.3</td>
+                        <td>38.4</td>
+                        <td>39.9</td>
+                        <td><strong>39.0</strong></td>
+                        <td>38.6</td>
+                        <td>55.8</td>
+                        <td>44.3</td>
+                        <td>49.4</td>
+                        <td>24.3</td>
+                    </tr>
+                    <tr>
+                        <td>Qwen2-VL-72B</td>
+                        <td>34.6</td>
+                        <td>18.7</td>
+                        <td>70.4</td>
+                        <td>82.5</td>
+                        <td>68.8</td>
+                        <td>52.3</td>
+                        <td>38.6</td>
+                        <td>35.2</td>
+                        <td><strong>42.1</strong></td>
+                        <td>51.5</td>
+                        <td><strong>47.4</strong></td>
+                        <td>49.2</td>
+                        <td>25.0</td>
+                    </tr>
+                    <tr>
+                        <td>LLaVA-OV-72B</td>
+                        <td>25.6</td>
+                        <td>26.0</td>
+                        <td><strong>75.9</strong></td>
+                        <td>81.1</td>
+                        <td><strong>81.4</strong></td>
+                        <td>55.6</td>
+                        <td>22.4</td>
+                        <td>28.2</td>
+                        <td>31.6</td>
+                        <td>52.2</td>
+                        <td>43.8</td>
+                        <td>47.5</td>
+                        <td><strong>53.1</strong></td>
+                    </tr>
+                    <tr>
+                        <td>LLaVA-Next-72B</td>
+                        <td>21.8</td>
+                        <td>21.1</td>
+                        <td>66.0</td>
+                        <td>32.3</td>
+                        <td>65.7</td>
+                        <td>49.7</td>
+                        <td>22.4</td>
+                        <td>27.2</td>
+                        <td>30.7</td>
+                        <td>35.3</td>
+                        <td>39.1</td>
+                        <td>37.4</td>
+                        <td>33.2</td>
+                    </tr>
+                    <tr>
+                        <td>InternVL2-72B</td>
+                        <td>26.9</td>
+                        <td>18.7</td>
+                        <td>57.4</td>
+                        <td>56.8</td>
+                        <td>56.1</td>
+                        <td>47.0</td>
+                        <td>24.7</td>
+                        <td>24.4</td>
+                        <td>7.9</td>
+                        <td>40.0</td>
+                        <td>32.0</td>
+                        <td>35.6</td>
+                        <td>22.9</td>
+                    </tr>
+                    <tr style="background-color: #e9edf6;">
+                        <td colspan="14" style="text-align: center;"><em>MLLMs: Proprietary</em></td>
+                    </tr>
+                    <tr>
+                        <td>Gemini-2-flash (CoT)</td>
+                        <td><strong>69.2</strong></td>
+                        <td><strong>49.6</strong></td>
+                        <td>72.8</td>
+                        <td>87.4</td>
+                        <td>78.7</td>
+                        <td>32.5</td>
+                        <td><strong>40.9</strong></td>
+                        <td>39.9</td>
+                        <td>43.9</td>
+                        <td><strong>69.8</strong></td>
+                        <td><strong>47.2</strong></td>
+                        <td><strong>57.2</strong></td>
+                        <td>45.9</td>
+                    </tr>
+                    <tr>
+                        <td>GPT-4o (CoT)</td>
+                        <td>45.5</td>
+                        <td>46.3</td>
+                        <td>70.4</td>
+                        <td><strong>88.8</strong></td>
+                        <td>81.4</td>
+                        <td><strong>47.0</strong></td>
+                        <td>34.4</td>
+                        <td>37.6</td>
+                        <td>34.2</td>
+                        <td>62.7</td>
+                        <td>46.9</td>
+                        <td>54.0</td>
+                        <td><strong>49.9</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Gemini-2-flash</td>
+                        <td>64.7</td>
+                        <td>35.0</td>
+                        <td><strong>73.5</strong></td>
+                        <td>87.0</td>
+                        <td>71.3</td>
+                        <td>34.4</td>
+                        <td>29.9</td>
+                        <td><strong>40.8</strong></td>
+                        <td>41.2</td>
+                        <td>65.0</td>
+                        <td>43.5</td>
+                        <td>53.1</td>
+                        <td>30.7</td>
+                    </tr>
+                    <tr>
+                        <td>GPT-4o</td>
+                        <td>42.9</td>
+                        <td>35.0</td>
+                        <td>66.0</td>
+                        <td>86.0</td>
+                        <td><strong>82.0</strong></td>
+                        <td>41.7</td>
+                        <td>29.9</td>
+                        <td>33.8</td>
+                        <td>32.5</td>
+                        <td>57.5</td>
+                        <td>44.0</td>
+                        <td>50.0</td>
+                        <td><strong>49.9</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Gemini-1.5-flash (CoT)</td>
+                        <td>30.1</td>
+                        <td>28.5</td>
+                        <td>66.7</td>
+                        <td>79.3</td>
+                        <td>51.0</td>
+                        <td>39.7</td>
+                        <td>20.1</td>
+                        <td>31.5</td>
+                        <td>35.1</td>
+                        <td>51.1</td>
+                        <td>35.5</td>
+                        <td>42.4</td>
+                        <td>15.3</td>
+                    </tr>
+                    <tr>
+                        <td>GPT-4o-mini</td>
+                        <td>35.3</td>
+                        <td>24.4</td>
+                        <td>43.2</td>
+                        <td>71.6</td>
+                        <td>43.1</td>
+                        <td>29.8</td>
+                        <td>14.6</td>
+                        <td>31.0</td>
+                        <td><strong>45.6</strong></td>
+                        <td>43.6</td>
+                        <td>32.8</td>
+                        <td>37.6</td>
+                        <td>10.8</td>
+                    </tr>
+                    <tr>
+                        <td>Gemini-1.5-flash</td>
+                        <td>26.9</td>
+                        <td>25.2</td>
+                        <td>59.3</td>
+                        <td>70.5</td>
+                        <td>26.4</td>
+                        <td>27.8</td>
+                        <td>18.2</td>
+                        <td>26.8</td>
+                        <td>22.8</td>
+                        <td>45.5</td>
+                        <td>24.4</td>
+                        <td>33.8</td>
+                        <td>10.6</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-      </div>
-    </div>
 
   </div>
 </section>
