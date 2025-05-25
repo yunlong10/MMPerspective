@@ -14,15 +14,15 @@ MMPerspective enables researchers and practitioners to uncover the strengths, li
 
 ## 🏆 Leaderboard
 
-![alt text](assets/tops.png)
+<!-- ![alt text](assets/tops.png) -->
 
-[Link](https://yunlong10.github.io/VidComposition/#leaderboard)
+[Link](https://yunlong10.github.io/MMPerspective/#leaderboard)
 
 ## 📉 Statistics
 
 ![alt text](assets/radar.png)
 
-[Link](https://yunlong10.github.io/VidComposition/#benchmark)
+[Link](https://yunlong10.github.io/MMPerspective/#benchmark)
 
 ## Data Curation Pipeline
 
