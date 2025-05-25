@@ -1,14 +1,14 @@
 
-# ✨ VidComposition: Can MLLMs Analyze Compositions in Compiled Videos? (CVPR 2025)
-[**🌐 Homepage**](https://yunlong10.github.io/VidComposition/) | [**🔬 Paper**](https://arxiv.org/abs/2411.10979) | [**👩‍💻 Code**](https://github.com/yunlong10/VidComposition/blob/main/) | [**📊 Dataset**](https://huggingface.co/datasets/JunJiaGuo/VidComposition_Benchmark) | [**📈 Evaluation**](https://huggingface.co/spaces/JunJiaGuo/VidComposition) | [**🏆 Leaderboard**](https://yunlong10.github.io/VidComposition/#leaderboard)
+# ✨ MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness
+[**🌐 Homepage**](https://yunlong10.github.io/MMPerspective/) | [**🔬 Paper**](https://arxiv.org/abs/2411.10979) | [**👩‍💻 Code**](https://github.com/yunlong10/MMPerspective/blob/main/) | [**📊 Dataset**](https://huggingface.co/datasets/JunJiaGuo/MMPerspective_Benchmark) | [**📈 Evaluation**](https://huggingface.co/spaces/JunJiaGuo/MMPerspective) | [**🏆 Leaderboard**](https://yunlong10.github.io/MMPerspective/#leaderboard)
 
-## What is VidComposition?
-> VidComposition is a novel benchmark crafted to evaluate the fine-grained video composition understanding of Multimodal Large Language Models (MLLMs). It focuses on assessing the ability of these models to interpret and analyze complex video compositions, where visual elements interact dynamically across time and space. VidComposition aims to bridge the gap in evaluating MLLMs by providing a detailed framework for understanding video content at a cinematic level. It comprises 15 intricate video comprehension tasks across five key areas of video composition.
+## What is MMPerspective?
+> MMPerspective is a comprehensive benchmark designed to systematically evaluate the understanding of perspective geometry by Multimodal Large Language Models (MLLMs). It comprises 10 diverse tasks across three key dimensions: Perspective Perception, Reasoning, and Robustness, with 2,711 real-world and synthetic image instances.
 
-![alt text](assets/examples.png)
+![alt text](assets/mmperspective.png)
 
 
-VidComposition enables researchers and practitioners to uncover the strengths, limitations, and potential areas for improvement in MLLMs, offering valuable insights into the challenges of understanding edited and compiled video content.
+MMPerspective enables researchers and practitioners to uncover the strengths, limitations, and potential areas for improvement in MLLMs, offering valuable insights into the challenges of understanding perspective geometry.
 
 
 
@@ -31,10 +31,10 @@ VidComposition enables researchers and practitioners to uncover the strengths, l
 
 ## ✏️ Citation
 ```bibtex
-@article{tang2024vidcompostion,
-  title = {VidComposition: Can MLLMs Analyze Compositions in Compiled Videos?},
-  author = {Tang, Yunlong and Guo, Junjia and Hua, Hang and Liang, Susan and Feng, Mingqian and Li, Xinyang and Mao, Rui and Huang, Chao and Bi, Jing and Zhang, Zeliang and Fazli, Pooyan and Xu, Chenliang},
-  journal = {arXiv preprint arXiv:2411.10979},
-  year = {2024}
+@article{tang2025mmperspective,
+  title = {MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness},
+  author = {Tang, Yunlong and Liu, Pinxin and Feng, Mingqian and Tan, Zhangyun and Mao, Rui and Huang, Chao and Bi, Jing and Xiao, Yunzhong and Liang, Susan and Hua, Hang and Vosoughi, Ali and Song, Luchuan and Zhang, Zeliang and Xu, Chenliang},
+  journal = {},
+  year = {2025}
 }
 ```
