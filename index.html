@@ -149,6 +149,9 @@
             <span class="author-block"><a href="https://zhangaipi.github.io/">Zeliang Zhang</a><sup style="color:#6fbf73;">1</sup>,</span>
             <span class="author-block"><a href="https://www.cs.rochester.edu/~cxu22/index.html">Chenliang Xu</a>&dagger;<sup style="color:#6fbf73;">1</sup></span><br>
             <!-- <span class="author-block" style="font-size:24px"><a href="https://github.com/BradyFU/Video-MME">MMComposition Team</a></span> -->
+            <br>
+            <span class="author-block" style="font-size:18px">* Core Contributors, &dagger; Corresponding Author</span>
+
         </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup style="color:#6fbf73">1</sup>University of Rochester,</span>
@@ -260,7 +263,7 @@
         <h2 class="title is-3" id="leaderboard">🏆 Leaderboard</h2>
         <div class="content">
             <p>
-              By default, this leaderboard is sorted by overall results. To view other sorted results, please click on the corresponding cell.
+              <strong>Performance of MLLMs on MMPerspective.</strong> Models are grouped by size and ranked by overall accuracy. Best scores in each group are bolded.
             </p>
             <table class="js-sort-table js-sort-asc" id="results" style="margin-left: auto; margin-right: auto;">
                 <thead>
@@ -1060,242 +1063,307 @@
 </section>
             
 <section class="section">
-  <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0;">
-    <div class="content has-text-centered" style="width: 100%; max-width: 500px;">
-      <!-- 标题 -->
-      <h2 class="title is-3" style="margin-top: 30px; margin-bottom: 20px;">📊 Statistics & Analysis</h2>
-      
-      <!-- 图表部分 -->
-      <div style="width: 100%; display: flex; flex-direction: column; align-items: center; margin: 0; padding: 0;">
-        <!-- 图片部分 -->
-        <img src="static/images/radar_chart.png" 
-             style="width: 100%; max-width: 500px; height: auto; object-fit: contain; margin-bottom: 0px;" />
-        <p style="text-align: center; margin-top: 0px; margin-bottom: 0; width: 100%;"> 
-          <strong>Top MLLMs' performance on VidComposition</strong>, across 15 tasks of 5 aspects of video composition understanding: Cinematography Analysis, Character Understanding, Narrative Understanding, Scene Perception, and Making Analysis.
-        </p>
-        <!-- 图表部分 -->
-        <div id="container" 
-             style="width: 100%; max-width: 500px; height: 500px; margin: 0px auto 0; padding: 0; display: flex; align-items: center; justify-content: center;"></div>
-      </div>
-      
-      <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
-      <script type="text/javascript" src="static/js/bingtu.js"></script>
-      
-      <!-- 描述文字 -->
-      <p style="text-align: center; margin-top: -20px; margin-bottom: 50px; width: 100%;"> 
-        <strong>Question Categorie Hierarchy</strong>: Question Types in VidComposition Benchmark for Evaluating MLLMs.
-      </p>
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths" style="width: 100%;height: 80%;">
+        <h2 class="title is-3">Data Examples</h2>
+        <div class="content has-text-justified">
+          <p style="text-align: center;", class="mt-3"><strong></strong>
+          </p>
 
-      <img src="static/images/level_2.png" 
-             style="width: 100%; max-width: 500px; height: auto; object-fit: contain; margin-bottom: 0px;" />
-        <p style="text-align: center; margin-top: 0px; margin-bottom: 0; width: 100%;"> 
-          <strong>The difficulty distribution across these five categories</strong>. If a question is answered correctly by more than 60% of MLLMs, it will be labeled as "Easy."; if a question is answered correctly by fewer than 10% of MLLMs, it will be labeled as "Super Hard."
-        </p>
+        <div id="results-carousel" class="carousel results-carousel">  
+          
+            <div class="content has-text-centered">
+
+              <img src="static/images/samples/CLP.png" style="width: 90%;"/>
+              <!-- <p style="margin-bottom: 30px;">Critical Line Perception</p> -->
+              <!-- <p style="margin-bottom: 30px;">🔗<a href="https://www.youtube.com/watch?v=VFntoBRGF1A">Full Video Link</a></p> -->
+            
+            </div>
+          
+            <div class="content has-text-centered">
+
+              <img src="static/images/samples/LDP.png" style="width: 78%;"/>
+              <!-- <p style="margin-bottom: 30px;">Len Distortion Perception</p> -->
+            
+            </div>
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/samples/LRR.png" style="width: 95%;"/>
+              <!-- <p style="margin-bottom: 30px;">Line Relationship Reasoning</p> -->
+            
+            </div>
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/samples/OVR.png" style="width: 95%;"/>
+              <!-- <p style="margin-bottom: 30px;">Out-of-View Reasoning</p> -->
+            
+            </div>
+
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/samples/PTR.png" style="width: 95%;"/>
+              <!-- <p style="margin-bottom: 30px;">Perspective Type Reasoning</p> -->
+            
+            </div>
+
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/samples/PTS.png" style="width: 95%;"/>
+              <!-- <p style="margin-bottom: 30px;">Perspective Transformation Spotting</p> -->
+            
+            </div>
+
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/samples/VAP.png" style="width: 85%;"/>
+              <!-- <p style="margin-bottom: 30px;">View Angle Perception</p> -->
+            
+            </div>
+
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/samples/VPC.png" style="width: 85%;"/>
+              <!-- <p style="margin-bottom: 30px;">Vanishing Point Perception</p> -->
+            
+            </div>
+
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/samples/VPP.png" style="width: 95%;"/>
+              <!-- <p style="margin-bottom: 30px;">Vanishing Point Perception</p> -->
+            
+            </div>
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/samples/robustness.png" style="width: 43%;"/>
+              <p style="margin-bottom: 30px;">Samples for Robustness Evaluation</p>
+            
+            </div>
+
+
+        </div>
+
+          
+        </div>
+      </div> 
+
+        </div>
+      </div>
     </div>
+    
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="title is-3" style="margin-top: 30px;">Benchmark Statistics</h2>
+          
+          <!-- bing tu -->
+          <div class="container-wrapper">
+            <div id="container"></div>
+            <div id="image-container">
+              <img src="static/images/radar_half.png" alt="data-composition" style="max-width: 50%; display: inline-block; margin-right: 200px;"/>
+            </div>
+          </div>
+        <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+        <script type="text/javascript" src="static/js/bingtu.js"></script>
+
+        <p style="text-align: center; margin-left: auto; margin-right: auto; width: 50%;"> 
+            (Left) <strong>Task Categorie Hierarchy</strong>: MMPerspective consists of 3 key task types and 10 subcategories. <br> (Right) <strong>SOTA Comparison</strong>: Performance of SOTA MLLMs on MMPerspective.<br/>
+        </p>
+
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="title is-3">Data Curation Pipeline</h2>
+          <img src="static/images/data_pipeline.png" alt="data-composition" style="max-width: 60%;"/>
+          <p style="text-align: center; margin-left: auto; margin-right: auto; width: 50%;" >
+            The data curation pipeline for MMPerspective.
+          </p>
+
+          <!-- <img src="static/images/dataset_comparison.png" alt="data-composition" style="max-width: 50%;"/> -->
+          <!-- <p style="text-align: center; margin-left: auto; margin-right: auto; width: 50%;" >
+            The comparison of various benchmarks encompasses several key aspects: 
+                the total number of videos, the number of clips, the average duration of the videos, the method of video annotation (manual denoted as M, automated as A), 
+                the average number of QA pair tokens, the average number of subtitle tokens, whether the videos cover multiple duration levels, 
+                whether the videos are sourced from a broad range of open domains, and whether provide subtitle together with audio information. 
+                It is important to note that if a dataset includes multiple task formats, our comparison focuses solely on the multiple-choice segment.
+          </p> -->
+        </div>
+      </div>
+    </div>
+    
   </div>
 </section>
 
 
 
+<!-- RESULTS SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">Experiment Results</h1>
+  </div>
+</section>
+
+
 <section class="section">
-  <div class="container" style="width: 60%;">
-  <center><h2 class="title is-3" id="exp">🧪 Experiments</h2></center>
-  <!-- 幻灯箱1 开始 -->
-  <br>
-  <div class="slideshow-container-1">
-    <div class="mySlides-1 fade">
-      <img src="static/images/res_analysis.png" style="width:100%">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths" style="width: 100%;height: 80%;">
+        <h2 class="title is-3">Results Analysis</h2>
+        <div class="content has-text-justified">
+          <p style="text-align: center;", class="mt-3"><strong></strong>
+          </p>
+
+        <div id="results-carousel" class="carousel results-carousel">  
+          
+            <div class="content has-text-centered">
+
+              <img src="static/images/results/all_radar.png" style="width: 80%;"/>
+              <p style="margin-bottom: 30px;">SOTA Models Performance on MMPerspective</p>
+              <!-- <p style="margin-bottom: 30px;">🔗<a href="https://www.youtube.com/watch?v=VFntoBRGF1A">Full Video Link</a></p> -->
+            
+            </div>
+          
+            <div class="content has-text-centered">
+
+              <img src="static/images/results/heatmap_combine_OverallAcc_Robustness_00.png" style="width: 80%;"/>
+              <p style="margin-bottom: 30px;">Heatmaps illustrating the relationship between model size and performance, measured by P\&R Overall Accuracy and Robustness. Darker colors indicate higher performance. Each line represents a model family, with sizes increasing from left to right.</p>
+            
+            </div>
+
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/results/vlm2_00.png" style="width: 80%;"/>
+              <p style="margin-bottom: 30px;">Correlation analysis between performance and size across MLLM families: (a) Overall accuracy vs. model size ($r = 0.81$), (b) Robustness vs. model size ($r = 0.34$), (c) Overall accuracy vs. encoder size ($r = 0.51$), (d) Robustness vs. encoder size ($r = 0.15$). Total model scaling strongly impacts perspective understanding, while vision encoder size has a limited influence on robustness.</p>
+            
+            </div>
+
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/results/within-cross_a.png" style="width: 50%;"/>
+              <p style="margin-bottom: 30px;">Error pattern analysis across model families: Cumulative distribution of phi coefficients shows significantly higher correlations within families than across families (Cohen's d=0.33, p < 0.001).</p>
+            
+            </div>
+
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/results/within-cross_b.png" style="width: 70%;"/>
+              <p style="margin-bottom: 30px;">Task-wise breakdown reveals perception tasks (VAP, CLP) exhibit the strongest family-specific patterns, while reasoning tasks (VPC, LRR) show weaker family effects.</p>
+            
+            </div>
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/results/level_3_fine_fixed.png" style="width: 70%;"/>
+              <p style="margin-bottom: 30px;">Difficulty Distribution of MMPerspective</p>
+            
+            </div>
+
+
+
+
+        </div>
+
+          
+        </div>
+      </div> 
+
+        </div>
+      </div>
     </div>
-    <div class="mySlides-1 fade">
-      <img src="static/images/bench_comp.png" style="width:100%">
-    </div>
-    <div class="mySlides-1 fade">
-      <img src="static/images/llm_analysis.png" style="width:100%">
-    </div>
-    <div class="mySlides-1 fade">
-      <img src="static/images/data_analysis.png" style="width:100%">
-    </div>
-     <div class="mySlides-1 fade">
-      <img src="static/images/frame_analysis.png" style="width:100%">
-    </div>
-    <!-- <div class="mySlides-1 fade">
-      <img src="static/images/text_decoder.jpg" style="width:100%">
-    </div> -->
-    <!-- 左右切换按钮 -->
-    <a class="prev-1" onclick="plusSlides1(-1)">&#10094;</a>
-    <a class="next-1" onclick="plusSlides1(1)">&#10095;</a>
-  </div>
-  <br>
 
-  <!-- 小圆点导航1 -->
-  <div style="text-align:center">
-    <span class="dot-1" onclick="currentSlide1(1)"></span> 
-    <span class="dot-1" onclick="currentSlide1(2)"></span> 
-    <span class="dot-1" onclick="currentSlide1(3)"></span> 
-    <span class="dot-1" onclick="currentSlide1(4)"></span> 
-    <span class="dot-1" onclick="currentSlide1(5)"></span>
-    <span class="dot-1" onclick="currentSlide1(6)"></span>
-  </div>
-  <!-- 幻灯箱1 结束 -->
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;height: 80%;">
+            <h2 class="title is-3">Chain-of-Thought Examples</h2>
+            <div class="content has-text-justified">
+              <p style="text-align: center;", class="mt-3"><strong></strong>
+              </p>
+    
+            <div id="results-carousel" class="carousel results-carousel">    
+    
+                <div class="content has-text-centered">
+    
+                  <img src="static/images/CoT/cot_gpt_1.png" style="width: 75%;"/>
+                  <!-- <p style="margin-bottom: 30px;">View Angle Perception</p> -->
+                
+                </div>
+    
+    
+                <div class="content has-text-centered">
+    
+                  <img src="static/images/CoT/cot_gpt_2.png" style="width: 85%;"/>
+                  <!-- <p style="margin-bottom: 30px;">Vanishing Point Perception</p> -->
+                
+                </div>
+    
+                <div class="content has-text-centered">
+    
+                  <img src="static/images/CoT/cot_gemini_1.png" style="width: 70%;"/>
+                  <!-- <p style="margin-bottom: 30px;">Perspective Transformation Spotting</p> -->
+                
+                </div>
+    
+    
+                <div class="content has-text-centered">
+    
+                  <img src="static/images/CoT/cot_gemini_2.png" style="width: 60%;"/>
+                  <!-- <p style="margin-bottom: 30px;">Vanishing Point Perception</p> -->
+                
+                </div>
 
-  <style>
-    /* 通用样式省略，只显示变化的部分 */
-    .slideshow-container-1, .slideshow-container-2 {
-      position: relative;
-      max-width: 100%;
-      margin: auto;
-    }
-    .mySlides-1, .mySlides-2 {
-      display: none;
-    }
-    .prev-1, .next-1, .prev-2, .next-2 {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      margin-top: -22px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 2;
-    }
-    .next-1 { right: 0; border-radius: 3px 0 0 3px; }
-    .prev-1 { left: 0; border-radius: 3px 0 0 3px; }
-    .next-2 { right: 0; border-radius: 3px 0 0 3px; }
-    .prev-2 { left: 0; border-radius: 3px 0 0 3px; }
-    .dot-1, .dot-2 {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-    .active-1, .dot-1:hover {
-      background-color: #717171;
-    }
-    .active-2, .dot-2:hover {
-      background-color: #717171;
-    }
-  </style>
+                <div class="content has-text-centered">
+    
+                  <img src="static/images/CoT/cot_failure_gemini2_lrr_00.png" style="width: 60%;"/>
+                  <!-- <p style="margin-bottom: 30px;">Vanishing Point Perception</p> -->
+                
+                </div>
+    
+                <div class="content has-text-centered">
+    
+                  <img src="static/images/CoT/cot_failure_gemini2_pts_00.png" style="width: 60%;"/>
+                  <!-- <p style="margin-bottom: 30px;">Perspective Transformation Spotting</p> -->
+                
+                </div>
+    
+    
+                <div class="content has-text-centered">
+    
+                  <img src="static/images/CoT/cot_failure_gpt4o_ptr_00.png" style="width: 60%;"/>
+                  <!-- <p style="margin-bottom: 30px;">Vanishing Point Perception</p> -->
+                
+                </div>
+    
+    
+            </div>
+    
+              
+            </div>
+          </div> 
+    
+            </div>
+          </div>
+        </div>
 
-  <script>
-    let slideIndex1 = 1;
-    let slideInterval1;
 
-    // 显示幻灯片1
-    function showSlides1(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides-1");
-      let dots = document.getElementsByClassName("dot-1");
-      if (n > slides.length) {slideIndex1 = 1}    
-      if (n < 1) {slideIndex1 = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active-1", "");
-      }
-      slides[slideIndex1-1].style.display = "block";  
-      dots[slideIndex1-1].className += " active-1";
-
-      clearInterval(slideInterval1);
-      slideInterval1 = setInterval(() => plusSlides1(1), 10000);
-    }
-
-    function plusSlides1(n) {
-      showSlides1(slideIndex1 += n);
-    }
-
-    function currentSlide1(n) {
-      showSlides1(slideIndex1 = n);
-    }
-
-    window.onload = function() {
-      slideInterval1 = setInterval(() => plusSlides1(1), 10000);
-      showSlides1(slideIndex1);
-      showSlides2(slideIndex2);
-    }
-  </script>
-
-  <br><br>
-
-  <!-- 幻灯箱2 开始 -->
-  <center><h2 class="title is-3" id="vis">🔭 Visualization Results</h2></center>
-  <br>
-  <div class="slideshow-container-2">
-    <div class="mySlides-2 fade">
-      <img src="static/images/exp1.png" style="width:100%">
-    </div>
-    <div class="mySlides-2 fade">
-      <img src="static/images/exp2.png" style="width:100%">
-    </div>
-    <div class="mySlides-2 fade">
-      <img src="static/images/exp3.png" style="width:100%">
-    </div>
-    <div class="mySlides-2 fade">
-      <img src="static/images/level_3.png" style="width:100%">
-    </div>
-    <div class="mySlides-2 fade">
-      <img src="static/images/frame_vis.png" style="width:100%">
-    </div>
-    <div class="mySlides-2 fade">
-      <img src="static/images/level_1.png" style="width:100%">
-    </div>
-    <!-- 左右切换按钮 -->
-    <a class="prev-2" onclick="plusSlides2(-1)">&#10094;</a>
-    <a class="next-2" onclick="plusSlides2(1)">&#10095;</a>
-  </div>
-  <br>
-
-  <!-- 小圆点导航2 -->
-  <div style="text-align:center">
-    <span class="dot-2" onclick="currentSlide2(1)"></span> 
-    <span class="dot-2" onclick="currentSlide2(2)"></span> 
-    <span class="dot-2" onclick="currentSlide2(3)"></span>
-    <span class="dot-2" onclick="currentSlide2(4)"></span> 
-    <span class="dot-2" onclick="currentSlide2(5)"></span> 
-    <span class="dot-2" onclick="currentSlide2(6)"></span> 
-  </div>
-  <!-- 幻灯箱2 结束 -->
-
-  <script>
-    let slideIndex2 = 1;
-
-    // 显示幻灯片2
-    function showSlides2(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides-2");
-      let dots = document.getElementsByClassName("dot-2");
-      if (n > slides.length) {slideIndex2 = 1}    
-      if (n < 1) {slideIndex2 = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active-2", "");
-      }
-      slides[slideIndex2-1].style.display = "block";  
-      dots[slideIndex2-1].className += " active-2";
-    }
-
-    function plusSlides2(n) {
-      showSlides2(slideIndex2 += n);
-    }
-
-    function currentSlide2(n) {
-      showSlides2(slideIndex2 = n);
-    }
-  </script>
-
-</div>
 
 
 <br><br>
@@ -1318,10 +1386,10 @@
   <div class="container is-max-desktop content">
     <pre><code>
       @article{tang2025mmperspective,
-        title = {MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness},
-        author = {Tang, Yunlong and Liu, Pinxin and Feng, Mingqian and Tan, Zhangyun and Mao, Rui and Huang, Chao and Bi, Jing and Xiao, Yunzhong and Liang, Susan and Hua, Hang and Vosoughi, Ali and Song, Luchuan and Zhang, Zeliang and Xu, Chenliang},
-        journal = {},
-        year = {2025}
+        title={MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness},
+        author={Tang, Yunlong and Liu, Pinxin and Feng, Mingqian and Tan, Zhangyun and Mao, Rui and Huang, Chao and Bi, Jing and Xiao, Yunzhong and Liang, Susan and Hua, Hang and others},
+        journal={arXiv preprint arXiv:2505.20426},
+        year={2025}
       }
 </code></pre>
   </div>
